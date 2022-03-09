@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<dc:language>de</dc:language>
+		<dc:creator opf:file-as="Tobias Frei, infiniteadventures.de" opf:role="aut">Tobias Frei, infiniteadventures.de</dc:creator>
+		<meta name="cover" content="cover"/>
+		<dc:date>2022-04-01T00:00:01+00:00</dc:date>
+		<dc:title>Infinite Adventures 2</dc:title>
+		<dc:identifier id="uuid_id" opf:scheme="uuid">dc9f6cc4-6692-4b5f-b737-3b02d10279f3</dc:identifier>
+		<dc:subject>Science Fiction</dc:subject>
+		<dc:subject>Weltall</dc:subject>
+		<dc:subject>Laser</dc:subject>
+		<dc:subject>Toronto</dc:subject>
+		<dc:subject>Raumschiff</dc:subject>
+		<dc:subject>Kartell</dc:subject>
+		<dc:subject>Kopfgeldjagd</dc:subject>
+	</metadata>
+	<manifest>
+		<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+		<item href="cover.jpeg" id="cover" media-type="image/jpeg"/>
+		<item href="titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+		<item href="ia2.xhtml" id="html" media-type="application/xhtml+xml"/>
+		<item href="ia.css" id="css" media-type="text/css"/>
+		<item href="z-include-small-ia2theme-page1.png" id="ia2theme01" media-type="image/png"/>
+		<item href="z-include-small-ia2theme-page2.png" id="ia2theme02" media-type="image/png"/>
+		<item href="z-include-small-ia2theme-page3.png" id="ia2theme03" media-type="image/png"/>
+		<item href="z-include-small-ia2theme-page4.png" id="ia2theme04" media-type="image/png"/>
+		<item href="z-include-small-bierstadtfalls.jpg" id="ia2falls" media-type="image/jpeg"/>
+		<item href="z-include-small-cityhalltowers.jpg" id="ia2towers" media-type="image/jpeg"/>
+		<item href="z-include-small-cityhallview.jpg" id="ia2view" media-type="image/jpeg"/>
+		<item href="z-include-small-galaxymap.jpg" id="ia2gmap" media-type="image/jpeg"/>
+		<item href="z-include-small-galaxymap-nogrid.jpg" id="ia2gmapn" media-type="image/jpeg"/>
+		<item href="z-include-small-helixnebula.jpg" id="ia2helix" media-type="image/jpeg"/>
+		<item href="z-include-small-ia2cover.jpg" id="ia2fullcover" media-type="image/jpeg"/>
+	</manifest>
+	<spine toc="ncx">
+		<itemref idref="titlepage"/>
+		<itemref idref="html"/>
+	</spine>
+	<guide>
+		<reference href="titlepage.xhtml" title="Cover" type="cover"/>
+	</guide>
+</package>

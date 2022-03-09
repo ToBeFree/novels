@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="deu">
+	<head>
+		<meta content="fa1e015a-5071-43cf-937a-01b4d257f5e1" name="dtb:uid"/>
+		<meta content="3" name="dtb:depth"/>
+		<meta content="0" name="dtb:totalPageCount"/>
+		<meta content="0" name="dtb:maxPageNumber"/>
+	</head>
+	<docTitle>
+		<text>5071</text>
+	</docTitle>
+	<navMap>
+		<navPoint class="chapter" id="sotipart0" playOrder="1">
+			<navLabel>
+				<text>Vorwort</text>
+			</navLabel>
+			<content src="5071.xhtml#vorwort"/>
+        </navPoint>
+        <navPoint class="chapter" id="sotipart1" playOrder="2">
+			<navLabel>
+				<text>50</text>
+			</navLabel>
+			<content src="5071.xhtml#fuenfzig"/>
+			<navPoint class="chapter" id="sotipart1chapter01" playOrder="3">
+				<navLabel>
+					<text>Fluchtpläne</text>
+				</navLabel>
+				<content src="5071.xhtml#fluchtplaene"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart1chapter02" playOrder="4">
+				<navLabel>
+					<text>Ausbruch 2040</text>
+				</navLabel>
+				<content src="5071.xhtml#ausbruch-2040"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart1chapter03" playOrder="5">
+				<navLabel>
+					<text>Grüße aus der Vergangenheit</text>
+				</navLabel>
+				<content src="5071.xhtml#gruesse-aus-der-vergangenheit"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart1chapter04" playOrder="6">
+				<navLabel>
+					<text>Wahrheitsfindung im Helixnebel</text>
+				</navLabel>
+				<content src="5071.xhtml#wahrheitsfindung-im-helixnebel"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="sotipart2" playOrder="7">
+			<navLabel>
+				<text>71</text>
+			</navLabel>
+			<content src="5071.xhtml#einundsiebzig"/>
+			<navPoint class="chapter" id="sotipart2chapter01" playOrder="8">
+				<navLabel>
+					<text>Holz und Stein</text>
+				</navLabel>
+				<content src="5071.xhtml#holz-und-stein"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter02" playOrder="9">
+				<navLabel>
+					<text>Müsli und Pizza</text>
+				</navLabel>
+				<content src="5071.xhtml#muesli-und-pizza"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter03" playOrder="10">
+				<navLabel>
+					<text>Toronto, 05. Januar 2026</text>
+				</navLabel>
+				<content src="5071.xhtml#toronto-05-januar-2026"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter04" playOrder="11">
+				<navLabel>
+					<text>Toronto, 19. Juni 2024</text>
+				</navLabel>
+				<content src="5071.xhtml#toronto-19-juni-2024"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter05" playOrder="12">
+				<navLabel>
+					<text>Dönkwön II, 03. September 2021</text>
+				</navLabel>
+				<content src="5071.xhtml#doenkwoen-ii-03-september-2021"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter06" playOrder="13">
+				<navLabel>
+					<text>ÖrzKäpitöl, 08. Dezember 2015</text>
+				</navLabel>
+				<content src="5071.xhtml#oerzkaepitoel-08-dezember-2015"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter07" playOrder="14">
+				<navLabel>
+					<text>Monongahela National Forest, 02. September 2021</text>
+				</navLabel>
+				<content src="5071.xhtml#monongahela-national-forest-02-september-2021"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter08" playOrder="15">
+				<navLabel>
+					<text>Monongahela National Forest, 03. September 2021</text>
+				</navLabel>
+				<content src="5071.xhtml#monongahela-national-forest-03-september-2021"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter09" playOrder="16">
+				<navLabel>
+					<text>Monongahela National Forest, 04. September 2021</text>
+				</navLabel>
+				<content src="5071.xhtml#monongahela-national-forest-04-september-2021"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter10" playOrder="17">
+				<navLabel>
+					<text>Zwischen den Welten</text>
+				</navLabel>
+				<content src="5071.xhtml#zwischen-den-welten"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter11" playOrder="18">
+				<navLabel>
+					<text>Maia I, 06. Juni 2036</text>
+				</navLabel>
+				<content src="5071.xhtml#maia-i-06-juni-2036"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter12" playOrder="19">
+				<navLabel>
+					<text>Örz, 05. Oktober 2105</text>
+				</navLabel>
+				<content src="5071.xhtml#oerz-05-oktober-2105"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter13" playOrder="20">
+				<navLabel>
+					<text>Örz, 05. Oktober 2036</text>
+				</navLabel>
+				<content src="5071.xhtml#oerz-05-oktober-2036"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart2chapter14" playOrder="21">
+				<navLabel>
+					<text>Anfang und Ende der Welt</text>
+				</navLabel>
+				<content src="5071.xhtml#anfang-und-ende-der-welt"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="sotipart3" playOrder="22">
+			<navLabel>
+				<text>Bonusmaterial</text>
+			</navLabel>
+			<content src="5071.xhtml#bonusmaterial"/>
+			<navPoint class="chapter" id="sotipart3chapter01" playOrder="23">
+				<navLabel>
+					<text>Postskriptum</text>
+				</navLabel>
+				<content src="5071.xhtml#postskriptum"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart3chapter02" playOrder="24">
+				<navLabel>
+					<text>Titelmelodie</text>
+				</navLabel>
+				<content src="5071.xhtml#titelmelodie"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart3chapter03" playOrder="25">
+				<navLabel>
+					<text>Musikliste</text>
+				</navLabel>
+				<content src="5071.xhtml#musikliste"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart3chapter04" playOrder="26">
+				<navLabel>
+					<text>Bildquellen</text>
+				</navLabel>
+				<content src="5071.xhtml#bildquellen"/>
+			</navPoint>
+			<navPoint class="chapter" id="sotipart3chapter05" playOrder="27">
+				<navLabel>
+					<text>Lizenz des Buchinhalts</text>
+				</navLabel>
+				<content src="5071.xhtml#lizenz-des-buchinhalts"/>
+			</navPoint>
+		</navPoint>
+	</navMap>
+</ncx>

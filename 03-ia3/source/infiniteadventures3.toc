@@ -1,0 +1,51 @@
+\selectlanguage *[spelling=new, babelshorthands=false]{german}
+\contentsline {section}{\nonumberline Was bisher geschah}{11}{section*.3}%
+\contentsline {part}{\numberline {I}Krieg im Carinanebel}{13}{part.1}%
+\contentsline {chapter}{\numberline {1}Am Rande der Relativität}{15}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Trumpler 14}{31}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Carinas dunkles Geheimnis}{39}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Das Ende der galaktischen Normalität}{59}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Eskalation}{99}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Berichte aus dem Helixnebel}{109}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Level 11: Ruhe vor dem Sturm}{109}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Level 12: Die Mondlichtung}{109}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Örz}{115}{chapter.7}%
+\contentsline {chapter}{\numberline {8}PHÖNIX}{127}{chapter.8}%
+\contentsline {chapter}{\numberline {9}SOTIs Auge}{139}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Level 13: Technologiesprung}{139}{section.9.1}%
+\contentsline {chapter}{\numberline {10}Interplanetare Schnitzeljagd}{143}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Ungeladene Partygäste}{153}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Kalte Rache}{173}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Grüße aus Manhattan}{179}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Der Zwischengegner}{183}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Level 20: Hauptbahnhof}{183}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Level 21: Abrechnung}{184}{section.14.2}%
+\contentsline {chapter}{\numberline {15}Abschied von einem Traum}{189}{chapter.15}%
+\newpage 
+\contentsline {part}{\numberline {II}Die Zeitreise}{197}{part.2}%
+\contentsline {chapter}{\numberline {16}Prolog}{199}{chapter.16}%
+\contentsline {chapter}{\numberline {17}Ein alter Bekannter}{201}{chapter.17}%
+\contentsline {chapter}{\numberline {18}Der Wanderer}{207}{chapter.18}%
+\contentsline {chapter}{\numberline {19}Eine Studie in Infrarot}{231}{chapter.19}%
+\contentsline {chapter}{\numberline {20}Eingriff in die Vergangenheit}{235}{chapter.20}%
+\contentsline {chapter}{\numberline {21}Das Archiv des Imperiums}{243}{chapter.21}%
+\contentsline {chapter}{\numberline {22}Plejadische Geheimnisse}{251}{chapter.22}%
+\contentsline {chapter}{\numberline {23}Rückflug ins Restaurant}{259}{chapter.23}%
+\contentsline {chapter}{\numberline {24}Allein auf Elektra VI}{265}{chapter.24}%
+\contentsline {chapter}{\numberline {25}Äquatorialer Burgbesuch}{271}{chapter.25}%
+\contentsline {chapter}{\numberline {26}Maia}{283}{chapter.26}%
+\newpage 
+\contentsline {part}{\numberline {III}Bonusmaterial}{291}{part.3}%
+\contentsline {chapter}{\numberline {27}Postskriptum}{293}{chapter.27}%
+\contentsline {chapter}{\numberline {28}Karte der Galaxis}{297}{chapter.28}%
+\contentsline {chapter}{\numberline {29}Titelmelodie}{301}{chapter.29}%
+\contentsline {chapter}{\numberline {30}Musikliste}{305}{chapter.30}%
+\contentsline {chapter}{\numberline {31}Zeitrechnung der Äöüzz}{315}{chapter.31}%
+\contentsline {section}{\numberline {31.1}Kalender mit Umrechnungshinweisen}{318}{section.31.1}%
+\contentsline {subsection}{\numberline {31.1.1}Irdischer UTC-Kalender}{318}{subsection.31.1.1}%
+\contentsline {subsection}{\numberline {31.1.2}Äöüzz-ÄÜC-Kalender}{319}{subsection.31.1.2}%
+\contentsline {section}{\numberline {31.2}Skript zur Umrechnung}{320}{section.31.2}%
+\contentsline {chapter}{\numberline {32}Kleines Lexikon}{323}{chapter.32}%
+\contentsline {chapter}{\numberline {33}Bildquellen}{325}{chapter.33}%
+\contentsline {chapter}{\numberline {34}Lizenz des Buchinhalts}{329}{chapter.34}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

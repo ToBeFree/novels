@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="deu">
+	<head>
+		<meta content="697eb1b4-6692-44eb-be73-ecbd8e05f5e2" name="dtb:uid"/>
+		<meta content="3" name="dtb:depth"/>
+		<meta content="0" name="dtb:totalPageCount"/>
+		<meta content="0" name="dtb:maxPageNumber"/>
+	</head>
+	<docTitle>
+		<text>Infinite Adventures 3</text>
+	</docTitle>
+	<navMap>
+		<navPoint class="chapter" id="ia3part0" playOrder="1">
+			<navLabel>
+				<text>Was bisher geschah</text>
+			</navLabel>
+			<content src="ia3.xhtml#was-bisher-geschah"/>
+        </navPoint>
+        <navPoint class="chapter" id="ia3part1" playOrder="2">
+			<navLabel>
+				<text>Krieg im Carinanebel</text>
+			</navLabel>
+			<content src="ia3.xhtml#krieg-im-carinanebel"/>
+			<navPoint class="chapter" id="ia3part1chapter01" playOrder="3">
+				<navLabel>
+					<text>Am Rande der Relativität</text>
+				</navLabel>
+				<content src="ia3.xhtml#am-rande-der-relativitaet"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter02" playOrder="4">
+				<navLabel>
+					<text>Trumpler 14</text>
+				</navLabel>
+				<content src="ia3.xhtml#trumpler-14"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter03" playOrder="5">
+				<navLabel>
+					<text>Carinas dunkles Geheimnis</text>
+				</navLabel>
+				<content src="ia3.xhtml#carinas-dunkles-geheimnis"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter04" playOrder="6">
+				<navLabel>
+					<text>Das Ende der galaktischen Normalität</text>
+				</navLabel>
+				<content src="ia3.xhtml#das-ende-der-galaktischen-normalitaet"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter05" playOrder="7">
+				<navLabel>
+					<text>Eskalation</text>
+				</navLabel>
+				<content src="ia3.xhtml#eskalation"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter06" playOrder="8">
+				<navLabel>
+					<text>Berichte aus dem Helixnebel</text>
+				</navLabel>
+				<content src="ia3.xhtml#berichte-aus-dem-helixnebel"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter07" playOrder="9">
+				<navLabel>
+					<text>Örz</text>
+				</navLabel>
+				<content src="ia3.xhtml#oerz"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter08" playOrder="10">
+				<navLabel>
+					<text>PHÖNIX</text>
+				</navLabel>
+				<content src="ia3.xhtml#phoenix"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter09" playOrder="11">
+				<navLabel>
+					<text>SOTIs Auge</text>
+				</navLabel>
+				<content src="ia3.xhtml#sotis-auge"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter10" playOrder="12">
+				<navLabel>
+					<text>Interplanetare Schnitzeljagd</text>
+				</navLabel>
+				<content src="ia3.xhtml#interplanetare-schnitzeljagd"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter11" playOrder="13">
+				<navLabel>
+					<text>Ungeladene Partygäste</text>
+				</navLabel>
+				<content src="ia3.xhtml#ungeladene-partygaeste"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter12" playOrder="14">
+				<navLabel>
+					<text>Kalte Rache</text>
+				</navLabel>
+				<content src="ia3.xhtml#kalte-rache"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter13" playOrder="15">
+				<navLabel>
+					<text>Grüße aus Manhattan</text>
+				</navLabel>
+				<content src="ia3.xhtml#gruesse-aus-manhattan"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter14" playOrder="16">
+				<navLabel>
+					<text>Der Zwischengegner</text>
+				</navLabel>
+				<content src="ia3.xhtml#der-zwischengegner"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part1chapter15" playOrder="17">
+				<navLabel>
+					<text>Abschied von einem Traum</text>
+				</navLabel>
+				<content src="ia3.xhtml#abschied-von-einem-traum"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="ia3part2" playOrder="18">
+			<navLabel>
+				<text>Die Zeitreise</text>
+			</navLabel>
+			<content src="ia3.xhtml#die-zeitreise"/>
+			<navPoint class="chapter" id="ia3part2chapter01" playOrder="19">
+				<navLabel>
+					<text>Prolog</text>
+				</navLabel>
+				<content src="ia3.xhtml#prolog"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter02" playOrder="20">
+				<navLabel>
+					<text>Ein alter Bekannter</text>
+				</navLabel>
+				<content src="ia3.xhtml#ein-alter-bekannter"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter03" playOrder="21">
+				<navLabel>
+					<text>Der Wanderer</text>
+				</navLabel>
+				<content src="ia3.xhtml#der-wanderer"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter04" playOrder="22">
+				<navLabel>
+					<text>Eine Studie in Infrarot</text>
+				</navLabel>
+				<content src="ia3.xhtml#eine-studie-in-infrarot"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter05" playOrder="23">
+				<navLabel>
+					<text>Eingriff in die Vergangenheit</text>
+				</navLabel>
+				<content src="ia3.xhtml#eingriff-in-die-vergangenheit"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter06" playOrder="24">
+				<navLabel>
+					<text>Das Archiv des Imperiums</text>
+				</navLabel>
+				<content src="ia3.xhtml#das-archiv-des-imperiums"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter07" playOrder="25">
+				<navLabel>
+					<text>Plejadische Geheimnisse</text>
+				</navLabel>
+				<content src="ia3.xhtml#plejadische-geheimnisse"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter08" playOrder="26">
+				<navLabel>
+					<text>Rückflug ins Restaurant</text>
+				</navLabel>
+				<content src="ia3.xhtml#rueckflug-ins-restaurant"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter09" playOrder="27">
+				<navLabel>
+					<text>Allein auf Elektra VI</text>
+				</navLabel>
+				<content src="ia3.xhtml#allein-auf-elektra-vi"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter10" playOrder="28">
+				<navLabel>
+					<text>Äquatorialer Burgbesuch</text>
+				</navLabel>
+				<content src="ia3.xhtml#aequatorialer-burgbesuch"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part2chapter11" playOrder="29">
+				<navLabel>
+					<text>Maia</text>
+				</navLabel>
+				<content src="ia3.xhtml#maia"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="ia3part3" playOrder="30">
+			<navLabel>
+				<text>Bonusmaterial</text>
+			</navLabel>
+			<content src="ia3.xhtml#bonusmaterial"/>
+			<navPoint class="chapter" id="ia3part3chapter01" playOrder="31">
+				<navLabel>
+					<text>Postskriptum</text>
+				</navLabel>
+				<content src="ia3.xhtml#postskriptum"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part3chapter02" playOrder="32">
+				<navLabel>
+					<text>Karte der Galaxis</text>
+				</navLabel>
+				<content src="ia3.xhtml#karte-der-galaxis"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part3chapter03" playOrder="33">
+				<navLabel>
+					<text>Titelmelodie</text>
+				</navLabel>
+				<content src="ia3.xhtml#titelmelodie"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part3chapter04" playOrder="34">
+				<navLabel>
+					<text>Musikliste</text>
+				</navLabel>
+				<content src="ia3.xhtml#musikliste"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part3chapter05" playOrder="35">
+				<navLabel>
+					<text>Zeitrechnung der Äöüzz</text>
+				</navLabel>
+				<content src="ia3.xhtml#zeitrechnung-der-aeoeuezz"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part3chapter06" playOrder="36">
+				<navLabel>
+					<text>Kleines Lexikon</text>
+				</navLabel>
+				<content src="ia3.xhtml#kleines-lexikon"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part3chapter07" playOrder="37">
+				<navLabel>
+					<text>Bildquellen</text>
+				</navLabel>
+				<content src="ia3.xhtml#bildquellen"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia3part3chapter08" playOrder="38">
+				<navLabel>
+					<text>Lizenz des Buchinhalts</text>
+				</navLabel>
+				<content src="ia3.xhtml#lizenz-des-buchinhalts"/>
+			</navPoint>
+		</navPoint>
+	</navMap>
+</ncx>

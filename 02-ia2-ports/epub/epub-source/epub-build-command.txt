@@ -1,0 +1,11 @@
+#!/bin/bash
+cd "content"
+zip -X0 "../ia2.epub" "mimetype"
+zip -Xr "../ia2.epub" *
+
+cd ..
+
+#!/bin/bash
+cd "content-nonfree"
+zip -X0 "../ia2-nonfree.epub" "mimetype"
+zip -Xr "../ia2-nonfree.epub" *

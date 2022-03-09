@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="deu">
+	<head>
+		<meta content="dc9f6cc4-6692-4b5f-b737-3b02d10279f3" name="dtb:uid"/>
+		<meta content="3" name="dtb:depth"/>
+		<meta content="0" name="dtb:totalPageCount"/>
+		<meta content="0" name="dtb:maxPageNumber"/>
+	</head>
+	<docTitle>
+		<text>Infinite Adventures 2</text>
+	</docTitle>
+	<navMap>
+		<navPoint class="chapter" id="ia2part0" playOrder="1">
+			<navLabel>
+				<text>Was bisher geschah</text>
+			</navLabel>
+			<content src="ia2.xhtml#was-bisher-geschah"/>
+        </navPoint>
+        <navPoint class="chapter" id="ia2part1" playOrder="2">
+			<navLabel>
+				<text>Befreiung der Erde</text>
+			</navLabel>
+			<content src="ia2.xhtml#befreiung-der-erde"/>
+			<navPoint class="chapter" id="ia2part1chapter1" playOrder="3">
+				<navLabel>
+					<text>Kernel Panic</text>
+				</navLabel>
+				<content src="ia2.xhtml#kernel-panic"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part1chapter2" playOrder="4">
+				<navLabel>
+					<text>Das Rathaus von Toronto</text>
+				</navLabel>
+				<content src="ia2.xhtml#das-rathaus-von-toronto"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part1chapter3" playOrder="5">
+				<navLabel>
+					<text>Minus Zwölf</text>
+				</navLabel>
+				<content src="ia2.xhtml#minus-zwoelf"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part1chapter4" playOrder="6">
+				<navLabel>
+					<text>Dögöbörz Nüggät</text>
+				</navLabel>
+				<content src="ia2.xhtml#doegoeboerz-nueggaet"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part1chapter5" playOrder="7">
+				<navLabel>
+					<text>Abflug</text>
+				</navLabel>
+				<content src="ia2.xhtml#abflug"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part1chapter6" playOrder="8">
+				<navLabel>
+					<text>Zwei blinde Hühner</text>
+				</navLabel>
+				<content src="ia2.xhtml#zwei-blinde-huehner"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part1chapter7" playOrder="9">
+				<navLabel>
+					<text>Wie überrumpelt man einen Raumschiffentführer?</text>
+				</navLabel>
+				<content src="ia2.xhtml#wie-ueberrumpelt-man-einen-raumschiffentfuehrer"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part1chapter8" playOrder="10">
+				<navLabel>
+					<text>Goethe und Schiller</text>
+				</navLabel>
+				<content src="ia2.xhtml#goethe-und-schiller"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="ia2part2" playOrder="11">
+			<navLabel>
+				<text>Das Gnörk-Kartell</text>
+			</navLabel>
+			<content src="ia2.xhtml#das-gnoerk-kartell"/>
+			<navPoint class="chapter" id="ia2part2chapter01" playOrder="12">
+				<navLabel>
+					<text>Islands Vermächtnis</text>
+				</navLabel>
+				<content src="ia2.xhtml#islands-vermaechtnis"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter02" playOrder="13">
+				<navLabel>
+					<text>Außerordentliche Sitzung</text>
+				</navLabel>
+				<content src="ia2.xhtml#ausserordentliche-sitzung"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter03" playOrder="14">
+				<navLabel>
+					<text>Gestrandet im Helixnebel</text>
+				</navLabel>
+				<content src="ia2.xhtml#gestrandet-im-helixnebel"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter04" playOrder="15">
+				<navLabel>
+					<text>Wildfalle</text>
+				</navLabel>
+				<content src="ia2.xhtml#wildfalle"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter05" playOrder="16">
+				<navLabel>
+					<text>Fortsetzung der Einsamkeit</text>
+				</navLabel>
+				<content src="ia2.xhtml#fortsetzung-der-einsamkeit"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter06" playOrder="17">
+				<navLabel>
+					<text>Der ugghy-Coup</text>
+				</navLabel>
+				<content src="ia2.xhtml#der-ugghy-coup"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter07" playOrder="18">
+				<navLabel>
+					<text>Der Sturm</text>
+				</navLabel>
+				<content src="ia2.xhtml#der-sturm"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter08" playOrder="19">
+				<navLabel>
+					<text>Über den Dächern von Legisla</text>
+				</navLabel>
+				<content src="ia2.xhtml#ueber-den-daechern-von-legisla"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter09" playOrder="20">
+				<navLabel>
+					<text>Auf Schlittschuhen in den Abgrund</text>
+				</navLabel>
+				<content src="ia2.xhtml#auf-schlittschuhen-in-den-abgrund"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter10" playOrder="21">
+				<navLabel>
+					<text>Abgehobene Gesellschaft</text>
+				</navLabel>
+				<content src="ia2.xhtml#abgehobene-gesellschaft"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter11" playOrder="22">
+				<navLabel>
+					<text>Zurück zum Helixnebel</text>
+				</navLabel>
+				<content src="ia2.xhtml#zurueck-zum-helixnebel"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter12" playOrder="23">
+				<navLabel>
+					<text>Verkehrte Welt</text>
+				</navLabel>
+				<content src="ia2.xhtml#verkehrte-welt"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part2chapter13" playOrder="24">
+				<navLabel>
+					<text>Plutoniumbefeuerter Wahnsinn</text>
+				</navLabel>
+				<content src="ia2.xhtml#plutoniumbefeuerter-wahnsinn"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="ia2part3" playOrder="25">
+			<navLabel>
+				<text>Bonusmaterial</text>
+			</navLabel>
+			<content src="ia2.xhtml#bonusmaterial"/>
+			<navPoint class="chapter" id="ia2part3chapter1" playOrder="26">
+				<navLabel>
+					<text>Postskriptum</text>
+				</navLabel>
+				<content src="ia2.xhtml#postskriptum"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part3chapter2" playOrder="27">
+				<navLabel>
+					<text>Titelmelodie</text>
+				</navLabel>
+				<content src="ia2.xhtml#titelmelodie"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part3chapter3" playOrder="28">
+				<navLabel>
+					<text>Musikliste</text>
+				</navLabel>
+				<content src="ia2.xhtml#musikliste"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part3chapter4" playOrder="29">
+				<navLabel>
+					<text>Zeitrechnung der Äöüzz</text>
+				</navLabel>
+				<content src="ia2.xhtml#zeitrechnung-der-aeoeuezz"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part3chapter5" playOrder="30">
+				<navLabel>
+					<text>Kleines Lexikon</text>
+				</navLabel>
+				<content src="ia2.xhtml#kleines-lexikon"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part3chapter6" playOrder="31">
+				<navLabel>
+					<text>Bildquellen</text>
+				</navLabel>
+				<content src="ia2.xhtml#bildquellen"/>
+			</navPoint>
+			<navPoint class="chapter" id="ia2part3chapter7" playOrder="32">
+				<navLabel>
+					<text>Lizenz des Buchinhalts</text>
+				</navLabel>
+				<content src="ia2.xhtml#lizenz-des-buchinhalts"/>
+			</navPoint>
+		</navPoint>
+	</navMap>
+</ncx>
