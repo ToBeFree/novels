@@ -17,6 +17,10 @@ for »5071«
 ---------------------------
 Tobias Frei, 5071.de
 
+for »Fnbsrd 1«
+---------------------------
+Tobias Frei, fnbsrd.de
+
 
 Licensed files
 ==============
@@ -48,6 +52,12 @@ for »5071«
 - 04-5071/5071.pdf
 - 04-5071-ports/html/index.html
 - 04-5071-ports/epub/5071.epub
+
+for »Fnbsrd«
+---------------------------
+- 05-fnbsrd-01/source/fnbsrd-01.tex
+- 05-fnbsrd-01/fnbsrd-01.pdf
+- 05-fnbsrd-01-ports/html/index.html (work in progress)
 
 
 License
