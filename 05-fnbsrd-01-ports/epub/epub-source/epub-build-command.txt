@@ -1,0 +1,11 @@
+#!/bin/bash
+cd "content"
+zip -X0 "../fnbsrd.epub" "mimetype"
+zip -Xr "../fnbsrd.epub" *
+
+cd ..
+
+#!/bin/bash
+cd "content-nonfree"
+zip -X0 "../fnbsrd-nonfree.epub" "mimetype"
+zip -Xr "../fnbsrd-nonfree.epub" *
