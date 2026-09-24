@@ -1,0 +1,83 @@
++--------------------------------------------------------------------------------------------+
+| DIE WELT  --  Fnbsrd: Der Hilferuf des Drachen (Band 1)                                    |
+| nach Ellens Landkarte  --  Norden ist oben                                                 |
++--------------------------------------------------------------------------------------------+
+| ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~     |
+|     (östliche und westliche Begrenzung unbekannt)  ~  jenseits des Ozeans: Smaragdminen    |
+| ~~    ~~    ~~    ~~    ~~    ~~        O Z E A N     ~~    ~~    ~~    ~~    ~~    ~~     |
+|    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~  |
+| ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~    ~~     |
+| ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    ~ ~    |
+|                                 #   #   #   # \ #   [x] PAVONIS              --> Arae   #  |
+|                            #      ##  #   ##   \    (Blaudorf, gefallen:   (weit entfernt) |
+|                         #       #   #   #   #   \    Weltstein-Krater)      #   #   #   #  |
+|      N               #       #    #  ##   #  ## \ #   #   #   #   #   #   #   #   #   #    |
+|      |                    #     # # #   Fluss    \  #   #   #   #   #   #   #   #   #   #  |
+|    W-+-O               #       #  #   ##  #   #   \   #   #   #   #   #   #   #   #   #    |
+|      |              #       #   #   #   #   #   #  \    #   #   #   #   #   #   #   #   #  |
+|      S                   #       ##   #  ##   #   # \ #   #   #   #   #   #   #   #   #    |
+|                       #       # #   # # #   #   #    \  #   #   #   #   #   #   #   #   #  |
+|                            #       #       #  #   #   \   #   #   #   #   #   #   #   #    |
+|                          Laubwald       #       #   #  \    #   #   #  dunkler Nadelwald   |
+|                       (wilde Tiere, Wölfe)   ##   #   # \ #   #   #   #   #   #   #   #    |
+|                           #       #       #     #   #    /                              #  |
+|                        #       #       #      #   #   # /  * CYGNIS (Hütten im Wald,  #    |
+|                     #       #       #       #    Bach  /     Mutterbaum)                #  |
+|                          #       #       #    #   # ../   #   #   #   #   #   #   #   #    |
+|  [*] LAST HOPE=========* PROXIMA========[*] ALPHA ..#   #   #   #   #   #   #   #   #   #  |
+|  (Westtor--Osttor,                      (Osttor)  == = = = = entfernte kleinere Dörfer --> |
+|   Lindenbibliothek)                                 #   #   #   #   #   #   #   #   #   #  |
+|                \ Abstieg                      #   #   #   #   #   #   #   #   #   #   #    |
+|                 \                               #   #   #   #   #   #   #   #   #   #   #  |
+|                  \                            #   #   #   #   #   #   #   #   #   #   #    |
+|                   \     ^   ^   ^               #   #   #   #   #   #   #   #   #   #   #  |
+|                   ^   ^   ^   ^   ^   ^                                                    |
+|                 ^   ^   ^   ^   ^   ^   ^                                                  |
+|               ^   ^   ^   ^   ^   ^   ^   ^                                                |
+|                  BLAUTAL  ^ ^ ^ ^   ^   ^                                                  |
+|                (Xenophob)   ^ ^ ^ ^   ^   ^                                                |
+|             ^   ^   ^ ^ ^ ^ ^ ^ ^ ^ ^   ^   ^                                              |
+|           ^   ^   ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^   ^   ^                                            |
+|     *       ^   ^ ^ ^ ^ ^  /\   ^ ^ ^ ^ ^   ^           *                                  |
+|           ^   ^   ^ ^ ^   NABE  ^  ROTTAL     ^                                            |
+|             ^   ^ ^ ^ ^ ^ ^ ^ ^   (lyssenko)                                               |
+|           ^   ^   ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^   ^   ^                                            |
+|             ^   ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^   ^                                              |
+|           ^   ^     N A B E N B E R G     ^   ^                                            |
+|             ^   ^   ^ ^ ^ ^ ^ ^ ^ ^ ^   ^   ^                                              |
+|               ^   ^   ^ ^ ^ ^ ^ ^ ^   ^   ^                                                |
+|                  GRÜNTAL  ^ ^ ^ ^   ^   ^                             [*] LEPORIS          |
+|                 (Thürstön)    ^   ^   ^   ^                           (am ehesten          |
+|    *            ^   ^   ^   ^   ^   ^   ^                              eine Stadt)         |
+|                   ^   ^   ^   ^   ^   ^                                |                   |
+|                         ^   ^   ^                           * Arneb -- + -- * Nihal        |
+|  <-- weit im Westen:                                                                       |
+|      Urwald um Luyten                   *                                                  |
+|      (jenseits der Karte)                                                                  |
+|                         fern im Süden: ein Land mit Straßen aus Gold (MAGNUS' Erzählung)   |
+|                                                                                            |
++--------------------------------------------------------------------------------------------+
+
+LEGENDE
+  ~ ~ ~   Ozean, Küste, See                 [*]  Dorf oder Stadt mit Mauern
+  ^ ^ ^   Gebirge (dichter = höher)          *   Dorf, Siedlung (offen)
+  # # #   Wald (Laub-, Nadel-, Urwald)       x   Ruine, Krater
+  = = =   Hauptweg der Handlung              .   Trampelpfad
+  / \     Fluss, Bach, Abstieg               w   Wölfe (Band 2)
+  | +     Anschluss eines Ortes an den Weg
+  /\      Berggipfel                         N   Norden ist oben
+
+  Unbeschriftete Sterne: die »Handvoll Alpha-großer Dörfer« rund um den Berg (im Roman namenlos).
+  Blautal, Grüntal, Rottal: die drei Talstädte, tausende Häuser hoch in den Nabenberg gekerbt.
+  Maßstab: keiner. Die Welt ist unendlich groß und flach; Entfernungen sind Fußmärsche von Tagen.
+
+HINWEISE ZUR KARTE
+  * Grundlage ist Ellens Landkarte (Kapitel »You Walk Away«): Last Hope, Proxima und Alpha liegen auf
+    einer Linie, die nördlich am Nabenberg vorbeiführt; im Norden der Ozean, im tiefen Südosten Leporis
+    mit Arneb und Nihal; Cygnis nordöstlich von Alpha; Pavonis nahe der nördlichen Kartengrenze am Meer.
+  * Die Lage der drei Täler rund um die Nabe wird im Roman nicht beschrieben. Hier zeigt Blautal nach
+    Nordwesten (Fnbsrds Abstieg nach Last Hope), Grüntal nach Südwesten, Rottal nach Osten.
+  * Arae ist nur »weit entfernt«; die Richtung ist frei gewählt.
+  * Pavonis ist im Zustand nach Band 1 eingezeichnet (Weltstein-Krater). Zu Beginn: ein Blaudorf mit
+    Betonmauern am Meer, Westtor, sternförmigen Wegen und sieben Springbrunnen.
+
