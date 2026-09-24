@@ -38,7 +38,8 @@ h1 small{font-family:ui-monospace,Consolas,"DejaVu Sans Mono",monospace;font-siz
 .fields input.year{width:6.4ch}
 .fields .sep{padding-top:1rem;color:var(--muted)}
 .fields .unit{padding-top:1rem;font-size:.9rem;color:var(--muted)}
-.fields input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.card.utc .fields input:focus-visible{outline:2px solid var(--utc);outline-offset:1px}
+.card.auc .fields input:focus-visible{outline:2px solid var(--auc);outline-offset:1px}
 .fields input.bad{border-color:var(--err);box-shadow:0 0 0 2px color-mix(in srgb,var(--err) 30%,transparent)}
 .out{font-family:ui-monospace,Consolas,"DejaVu Sans Mono",monospace;font-size:1.35rem;font-variant-numeric:tabular-nums;padding:.6rem .8rem;border-radius:8px;background:var(--bg);word-break:break-all}
 .card.utc .out{background:var(--utc-soft)} .card.auc .out{background:var(--auc-soft)}
@@ -48,8 +49,8 @@ h1 small{font-family:ui-monospace,Consolas,"DejaVu Sans Mono",monospace;font-siz
 .arrow{align-self:center;color:var(--muted);font-size:1.8rem;text-align:center;padding:0 .2rem}
 .toolbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0}
 button{font:inherit;font-size:.9rem;padding:.45rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
-button:hover{border-color:var(--accent)} button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-button.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+button:hover{border-color:var(--utc)} button:focus-visible{outline:2px solid var(--utc);outline-offset:2px}
+button.primary{background:var(--utc);color:var(--bg);border-color:var(--utc)}
 details{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:.75rem}
 summary{cursor:pointer;font-weight:600}
 table{border-collapse:collapse;width:100%;font-size:.92rem;margin-top:.6rem}
