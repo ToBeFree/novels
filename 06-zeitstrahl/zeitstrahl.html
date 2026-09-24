@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Zeitstrahl der Infinite Adventures</title>
+<style>
+:root{
+  --bg:#f6f4ee; --paper:#fffdf8; --ink:#1d1b17; --muted:#5f5a50; --line:#d9d3c5;
+  --x:#2a6f97; --x-soft:#dbe9f2;   /* Original-Gegenwart X: kühles Blau */
+  --y:#b0472b; --y-soft:#f5dfd6;   /* Zeitreisende Y: Ziegelrot */
+  --soti:#3b2f4a; --soti-soft:#e6e0ee; /* SOTI: Nachtviolett */
+  --obj:#7a6a1f; --obj-soft:#efe8c4; /* Objekte: Gold */
+  --ia1:#4a7c59; --ia2:#8a5a2b; --ia3:#2a6f97; --b5071:#3b2f4a;
+  --warn:#9c3d1f; --ok:#3f7a4a;
+  --shadow:0 1px 2px rgba(29,27,23,.06), 0 6px 20px rgba(29,27,23,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#15130f; --paper:#1e1b16; --ink:#ede7da; --muted:#a79f8f; --line:#3a352c;
+    --x:#7fb6d8; --x-soft:#1f3442; --y:#e08a6e; --y-soft:#3f2419; --soti:#c7b6e2; --soti-soft:#2c2438;
+    --obj:#d9c35a; --obj-soft:#3a3416; --ia1:#7fbf90; --ia2:#d09a5f; --ia3:#7fb6d8; --b5071:#c7b6e2;
+    --warn:#e58b6a; --ok:#8cc898; --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#15130f; --paper:#1e1b16; --ink:#ede7da; --muted:#a79f8f; --line:#3a352c;
+  --x:#7fb6d8; --x-soft:#1f3442; --y:#e08a6e; --y-soft:#3f2419; --soti:#c7b6e2; --soti-soft:#2c2438;
+  --obj:#d9c35a; --obj-soft:#3a3416; --ia1:#7fbf90; --ia2:#d09a5f; --ia3:#7fb6d8; --b5071:#c7b6e2;
+  --warn:#e58b6a; --ok:#8cc898; --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px;padding-block:24px 64px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:1.6rem;font-weight:600;margin-block:2.5rem .75rem;padding-top:.5rem;border-top:2px solid var(--line)}
+h3{font-size:1.15rem;font-weight:600;margin-block:1.4rem .4rem}
+p{max-width:68ch;margin:.4rem 0}
+.lede{font-size:1.1rem;color:var(--muted);max-width:70ch}
+.eyebrow{font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+code,.mono{font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.9em}
+a{color:var(--x)}
+small{color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-block:1rem;font-size:.9rem}
+.legend span{display:inline-flex;align-items:center;gap:.4rem}
+.sw{width:14px;height:14px;border-radius:3px;display:inline-block}
+.chip{display:inline-block;font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:.15em .5em;border-radius:3px;border:1px solid transparent;white-space:nowrap}
+.chip.x{background:var(--x-soft);color:var(--x)} .chip.y{background:var(--y-soft);color:var(--y)}
+.chip.soti{background:var(--soti-soft);color:var(--soti)} .chip.obj{background:var(--obj-soft);color:var(--obj)}
+.chip.ia1{color:var(--ia1);border-color:var(--ia1)} .chip.ia2{color:var(--ia2);border-color:var(--ia2)}
+.chip.ia3{color:var(--ia3);border-color:var(--ia3)} .chip.b5071{color:var(--b5071);border-color:var(--b5071)}
+.chip.wiki{color:var(--muted);border-color:var(--line)}
+.chip.unsicher{color:var(--warn);border-color:var(--warn)}
+
+/* Filter */
+.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:.6rem;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:center;font-size:.9rem}
+.filters label{display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;padding:.15em .5em;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.filters input{accent-color:var(--y)}
+.filters .count{margin-left:auto;color:var(--muted);font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.8rem}
+
+/* Timeline */
+.tl{position:relative;margin-block:1.5rem;padding-left:0}
+.era{margin-block:2rem 1rem}
+.era .eyebrow{display:block;margin-bottom:.25rem}
+.era h3{margin:0;font-size:1.5rem}
+.ev{display:grid;grid-template-columns:150px 1fr;gap:0 1.25rem;position:relative;padding-block:.9rem;border-top:1px solid var(--line)}
+.ev:first-of-type{border-top:0}
+.ev.hidden-by-filter{display:none}
+.when{font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.82rem;line-height:1.4;color:var(--muted);padding-top:.15rem;font-variant-numeric:tabular-nums}
+.when b{display:block;color:var(--ink);font-weight:500;font-size:.9rem}
+.when .auc{display:block;opacity:.85}
+.what{min-width:0}
+.what .t{font-weight:600;margin:0 0 .2rem;display:flex;flex-wrap:wrap;gap:.35rem .5rem;align-items:center}
+.what p{max-width:75ch;margin:.25rem 0}
+.what .src{font-size:.8rem;color:var(--muted);margin-top:.25rem}
+.ev.lane-x{border-left:4px solid var(--x);padding-left:.9rem}
+.ev.lane-y{border-left:4px solid var(--y);padding-left:.9rem}
+.ev.lane-soti{border-left:4px solid var(--soti);padding-left:.9rem}
+.ev.lane-obj{border-left:4px solid var(--obj);padding-left:.9rem}
+.ev.lane-both{border-left:4px solid transparent;border-image:linear-gradient(var(--x) 0 50%, var(--y) 50% 100%) 1;padding-left:.9rem}
+@media (max-width:640px){
+  .ev{grid-template-columns:1fr;gap:.2rem}
+  .when{display:flex;flex-wrap:wrap;gap:.2rem .8rem}
+  .when b,.when .auc{display:inline}
+}
+
+/* Routen */
+.route{display:grid;grid-template-columns:auto 1fr;gap:.35rem .9rem;counter-reset:step;margin:.75rem 0 1.25rem;padding:0;list-style:none;max-width:80ch}
+.route li{display:contents}
+.route li::before{counter-increment:step;content:counter(step);font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.8rem;color:var(--muted);padding-top:.15rem;text-align:right;min-width:1.6em}
+.route li div{padding-bottom:.35rem;border-bottom:1px dashed var(--line)}
+.route .d{font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.8rem;color:var(--muted)}
+
+/* Karten / Boxen */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-block:1rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem;box-shadow:var(--shadow)}
+.card h3{margin-top:0}
+.card p{max-width:60ch}
+.note{border-left:4px solid var(--obj);background:var(--obj-soft);padding:.7rem 1rem;border-radius:0 6px 6px 0;margin-block:1rem;max-width:80ch}
+.note.warn{border-color:var(--warn);background:var(--y-soft)}
+.note.ok{border-color:var(--ok);background:var(--x-soft)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+.tablewrap{overflow-x:auto;margin-block:1rem}
+th,td{text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:ui-monospace,"Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.mono{white-space:nowrap}
+ul.tight{margin:.3rem 0 .3rem 1.2rem;padding:0;max-width:75ch}
+ul.tight li{margin:.25rem 0}
+details{margin-block:.5rem;max-width:80ch}
+summary{cursor:pointer;font-weight:600}
+.toc{display:flex;flex-wrap:wrap;gap:.4rem .9rem;font-size:.9rem;margin-block:1rem}
+.toc a{text-decoration:none;border-bottom:1px solid var(--line)}
+:focus-visible{outline:2px solid var(--y);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){ .ev{transition:opacity .15s} }
+
+@media print{
+  :root{--bg:#fff;--paper:#fff;--ink:#111;--muted:#555;--line:#bbb;--x-soft:#e6eef4;--y-soft:#f7e5de;--soti-soft:#ebe6f1;--obj-soft:#f3eed6}
+  body{font-size:10.5pt;line-height:1.4}
+  .wrap{max-width:none;padding:0}
+  .filters,.toc{display:none!important}
+  .ev,.card,.route li div,tr{break-inside:avoid;page-break-inside:avoid}
+  h2{break-after:avoid;margin-top:1.6rem}
+  .era{break-after:avoid}
+  .card{box-shadow:none}
+  .grid{grid-template-columns:1fr 1fr}
+  .ev{grid-template-columns:130px 1fr}
+  details summary{list-style:none}
+  details > *:not(summary){display:block}
+  a{color:inherit;text-decoration:none}
+  @page{size:A4;margin:16mm 14mm}
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">Infinite Adventures 1–3 · Zusatzband 5071 · Arbeitsstand aus den LaTeX-Quellen</span>
+  <h1>Zeitstrahl der Infinite Adventures</h1>
+  <p class="lede">Alle datierbaren Ereignisse der drei Romane und des Zusatzbands auf einer Kalenderachse, dazu die Reisen der Zeitreisenden in ihrer eigenen Reihenfolge und die Weltlinien der Gegenstände, die im Kreis durch die Zeit wandern. Grundlage ist yurys Regel aus IA3: Die Vergangenheit wird nicht verändert, alles ist bereits so geschehen. Wer in die Vergangenheit reist, existiert dort doppelt.</p>
+
+  <nav class="toc" aria-label="Inhalt">
+    <a href="#regeln">Spielregeln</a>
+    <a href="#kalender">Kalender-Zeitstrahl</a>
+    <a href="#route-crew">Reise der vier</a>
+    <a href="#route-soti">Reise der Seele des Internets</a>
+    <a href="#objekte">Weltlinien der Objekte</a>
+    <a href="#pruefung">Konsistenzprüfung</a>
+    <a href="#offen">Offene Punkte</a>
+    <a href="#auc">ÄÜC-Umrechnung</a>
+  </nav>
+
+  <div class="legend" aria-label="Legende">
+    <span><i class="sw" style="background:var(--x)"></i> X: Original-Gegenwart (nie gereist)</span>
+    <span><i class="sw" style="background:var(--y)"></i> Y: Zeitreisende (während oder nach einer Reise)</span>
+    <span><i class="sw" style="background:var(--soti)"></i> SOTI: Seele des Internets</span>
+    <span><i class="sw" style="background:var(--obj)"></i> Objekte und Hintergrund</span>
+  </div>
+
+  <h2 id="regeln">Die Spielregeln der Bücher</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>X und Y</h3>
+      <p>yury (IA3, »Der Wanderer«): Vor der Zeitreise sind wir die Individuen X, die nie gereist sind. Während und nach der Reise sind wir Y. Während der Reise existieren X und Y gleichzeitig, danach nur noch Y. Y existiert nur im begrenzten Reiseabschnitt und in der Zukunft.</p>
+      <p><small>Beispiel im Buch: Free, geboren 1996, saß am 11.09.2001 als X vor dem Fernseher und stand als Y in der schwimmenden Etage vor Manhattan.</small></p>
+    </div>
+    <div class="card">
+      <h3>Kein Großvater-Paradoxon</h3>
+      <p>»Du hast deinen Großvater auf deiner Zeitreise nicht umgebracht.« Indikativ Perfekt. Alle Tätigkeiten in der Vergangenheit sind bereits geschehen, auch die der Zeitreisenden. »Das ist kein Schicksal, das ist Physik.« Trotzdem wird echt entschieden: Orakel will SOTI befreien, weil es sonst gar nicht funktioniert.</p>
+    </div>
+    <div class="card">
+      <h3>»Sonst wüssten wir davon«</h3>
+      <p>Das Wissen über die Reise entsteht erst durch die Reise. Die X-Ichs dürfen nie erfahren, dass die Y-Ichs existieren. Deshalb: keine Selbstbegegnung der vier, Tarnmodul beim Start, kein Raumschiff mit in die Vergangenheit. SOTI spielt dagegen bewusst mit Selbstbegegnungen und nennt Widersprüche »Erinnerungslücken«.</p>
+    </div>
+    <div class="card">
+      <h3>Objekte ohne Ursprung</h3>
+      <p>Der Helikopterschlüssel, der weiße Umschlag, die Briefkasten-Koordinaten und die Zeitmaschine selbst laufen im Kreis: Sie werden aus der Zukunft geholt und zur Bedingung ihrer eigenen Existenz. Alexandra: »Informationstransport, ja? Worin denn? In einem Gegenstand. Ups.«</p>
+    </div>
+    <div class="card">
+      <h3>Der Reset-Knopf</h3>
+      <p>TMPE bringt die Reisenden an einen einprogrammierten Bezugspunkt zurück. In IA1 ist das die Etage vor Manhattan; für IA3 programmiert SOTI ihn am 19.06.2024 auf den Tisch im U-Boot unter Toronto. Der Reset wirkt nur auf Zeitreisende: X-SOTI bleibt 2021 unbeeindruckt stehen.</p>
+    </div>
+    <div class="card">
+      <h3>Zwei Kalender</h3>
+      <p>Erdzeit in UTC, Äöüzz-Zeit in ÄÜC (»Ännö Ürbizz Cönditä«, Epoche 1. Januar −752). Ein Örzröt hat 28 Stunden, ein Örzbit 402 Tage. Die ÄÜC-Angaben unten sind mit der Formel aus dem Bonusmaterial berechnet; das Buch nennt nur einige davon selbst.</p>
+    </div>
+  </div>
+
+  <h2 id="kalender">Kalender-Zeitstrahl</h2>
+  <p>Jede Zeile ist ein Zeitpunkt der Kalenderzeit. Wo mehrere Versionen einer Person gleichzeitig unterwegs sind, gibt es mehrere Zeilen. Datumsangaben aus den Büchern stehen fett; berechnete oder erschlossene Angaben sind als solche markiert.</p>
+
+  <div class="filters" role="group" aria-label="Filter">
+    <label><input type="checkbox" id="f-ia1" checked> IA1</label>
+    <label><input type="checkbox" id="f-ia2" checked> IA2</label>
+    <label><input type="checkbox" id="f-ia3" checked> IA3</label>
+    <label><input type="checkbox" id="f-5071" checked> 5071</label>
+    <label><input type="checkbox" id="f-bg" checked> Hintergrund</label>
+    <label><input type="checkbox" id="f-onlytime"> nur Zeitreise-Zeilen</label>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="tl" id="tl">
+
+    <div class="era"><span class="eyebrow">Vorgeschichte</span><h3>Vor der Zeitrechnung bis 1996</h3></div>
+
+    <div class="ev lane-obj" data-book="bg">
+      <div class="when"><b>1. Januar −752</b><span class="auc">0000-00-00 ÄÜC</span></div>
+      <div class="what"><div class="t">Nullpunkt des ÄÜC-Kalenders <span class="chip obj">Kalender</span><span class="chip ia3">IA3 Bonus</span></div>
+      <p>Angeblicher Gründungszeitpunkt Roms. SOTI: »Eigentlich Unsinn, aber die Äöüzz haben das auch getan und nie korrigiert.«</p></div>
+    </div>
+
+    <div class="ev lane-obj" data-book="bg">
+      <div class="when"><b>Jahr −47</b><span class="auc">≈ 640-5-19 ÄÜC</span></div>
+      <div class="what"><div class="t">Die Altherrscher entführen »eine Handvoll« Römer <span class="chip obj">Herkunft der Äöüzz</span><span class="chip ia3">IA3</span><span class="chip b5071">5071</span></div>
+      <p>Im Bürgerkrieg um Caesar verschwinden Menschen. Genetische Manipulation durch Aliens, die in 5071 als weiße Mäuse (Fnbsrd: »Ich war daran beteiligt«) auftreten. Die erste in Gefangenschaft geborene Generation hat grünes Fell, drei Augen und vierzehn Finger, flieht mit einem gestohlenen Raumschiff in die Plejaden und weiter nach NGC 6193: Örz. Die Angst vor Verfolgung treibt den Aufbau des Imperiums an.</p>
+      <p class="src">IA3 »Äquatorialer Burgbesuch«; 5071 »Wahrheitsfindung im Helixnebel«</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071">
+      <div class="when"><b>Ferne Vergangenheit</b><span class="auc">»tausende Jahre« vor 2040, undatiert</span></div>
+      <div class="what"><div class="t">SOTI als Gefangener auf Eta Carinae ABC 2 <span class="chip soti">SOTI</span><span class="chip b5071">5071</span></div>
+      <p>Ein Erdmensch (englische Muttersprache), dessen Gehirn die weißen Mäuse geraubt haben, lebt Jahrhunderte in einem Androidenkörper mit dem Aussehen eines vierzehnjährigen Goths. Er entwirft die Stadt mit den vier Wolkenkratzern und Glasbrücken, die in IA3 als »postapokalyptische Metropole« gefunden wird. Dort haben nie Menschen gelebt. Er lernt aus Langeweile Deutsch und liebt Umlaute: der Ursprung von Örzlängü. Zeitportal und Kristallkugel sind auf seinen Planeten und seine eigene Lebenszeit beschränkt, angeblich.</p>
+      <p class="src">5071 »Fluchtpläne«, »Wahrheitsfindung im Helixnebel«</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071">
+      <div class="when"><b>Ferne Vergangenheit, später</b><span class="auc">undatiert</span></div>
+      <div class="what"><div class="t">Rückkehr und Vergeltung <span class="chip soti">SOTI</span><span class="chip b5071">5071</span><span class="chip unsicher">Reihenfolge unklar</span></div>
+      <p>Nach seiner Reise kehrt SOTI mit Fnbsrd durch das Portal zurück. Der Wolframwürfel am Portal ist nicht leer: Jemand (die Verfolger?) hat diesen Weg schon genutzt. Es folgt eine »Vergeltungsreise durch Zeit und Raum, die im Aussterben des grausamen Sternenreichs unter den Augen seiner Roboter endete«. Die Roboter arbeiten danach weiter und werden 2034 zum Mechanischen Reich. In einer zweiten, märchenhaften Fassung geht Fnbsrd allein durch ein Portal, das nur für ihn bestimmt ist.</p>
+      <p class="src">5071 »Anfang und Ende der Welt«</p></div>
+    </div>
+
+    <div class="ev lane-obj" data-book="bg">
+      <div class="when"><b>14. November 1430</b><span class="auc">1984-00-00 ÄÜC</span></div>
+      <div class="what"><div class="t">Beispieldatum der Bonuskapitel <span class="chip obj">Kalender</span></div>
+      <p>In IA1 als Jahr einer Erfindung im Imperium genannt (»Im Jahr 1984 ÄÜC ist uns endlich gelungen …«), in den Bonuskapiteln als Umrechnungsbeispiel.</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="bg">
+      <div class="when"><b>1996</b></div>
+      <div class="what"><div class="t">Free wird geboren <span class="chip x">X</span><span class="chip ia3">IA3</span></div>
+      <p>Alexandras Beispiel für die X/Y-Regel: Von 1996 bis 2001 existiert Free nur als X.</p></div>
+    </div>
+
+    <div class="era"><span class="eyebrow">Infinite Adventures 1</span><h3>2001 bis 2021</h3></div>
+
+    <div class="ev lane-y" data-book="ia1">
+      <div class="when"><b>11. September 2001</b><span class="auc">2502-05-36 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Die schwimmende Etage vor Manhattan <span class="chip y">Y-Protagonisten aus 2012</span><span class="chip ia1">IA1</span></div>
+      <p>Orakel springt mit dem TMPE-Laptop samt Büroetage aus 2012 zurück; im Radio läuft 9:46 Uhr. Free drückt Reset, alle kehren zurück. Niemand bemerkt die Etage, der Aufmerksamkeitsfokus liegt woanders. In IA3 dient der Tag als Lehrbeispiel: X-Free vor dem Fernseher, Y-Free vor Manhattan.</p>
+      <p class="src">IA1 »Von Mallorca nach New York«; IA3 »Der Wanderer«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia1">
+      <div class="when"><b>Frühjahr/Sommer 2012</b><span class="auc">≈ 2512 ÄÜC</span></div>
+      <div class="what"><div class="t">TMPE gefunden und ins Meer geworfen <span class="chip x">X</span><span class="chip obj">TMPE</span><span class="chip ia1">IA1</span></div>
+      <p>Hinter der Tür »Notausgang« der schwimmenden Etage liegt die »Time Machine Professional Edition« (Willkommensdemo zählt die Jahre 2050 bis 2001 herunter, Helax-Wallet). Nach dem Ausflug nach 2001 wirft yury den Laptop bei 40.374274, −73.661259 ins Meer. FBI-Agent Floating Island hat genau diese Maschine gesucht: »Habt ihr vorher Reset gedrückt?«</p>
+      <p class="src">IA1 »Von Mallorca nach New York«, »Spontaner Ausflug«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia1 ia3">
+      <div class="when"><b>9. Juli 2012, 14:10 UTC</b><span class="auc"><b>2512-04-30 47:44:15 ÄÜC</b></span></div>
+      <div class="what"><div class="t">Zwei Besatzungen, ein Zeitpunkt <span class="chip x">X</span><span class="chip y">Y aus 2034</span><span class="chip ia1">IA1</span><span class="chip ia3">IA3</span><span class="chip wiki">Wiki 002</span></div>
+      <p><b>X:</b> Alexandra, Free, Orakel und yury fliegen nach dem Golddiebstahl in Fort Knox mit einer gestohlenen 737 über den Atlantik. <b>Y:</b> Dieselben vier, aus dem Mai 2034 gesprungen, stehen knietief in der Kanalisation von Legisla auf ugghy (Bluescreen STOP 0x000000F4) und fragen an der Stratum-1-Zeitauskunft das Datum ab. Der einzige Zeitpunkt, den das Wiki und das Buch in beiden Kalendern nennen.</p>
+      <p class="src">IA3 »Der Wanderer«</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="ia3">
+      <div class="when"><b>Juli 2012, kurz danach</b></div>
+      <div class="what"><div class="t">Helikopterdiebstahl auf ugghy <span class="chip y">Y</span><span class="chip ia3">IA3</span><span class="chip wiki">Wiki 002–004</span></div>
+      <p>Auf dem Raumhafen steht Konrad Irbys rot-goldene CH-47 mit fünfzig Knöllchen. Alexandra öffnet sie mit dem Schlüssel, den CombatCookie 2034 auf Eta Carinae ABC 2 liegen ließ. Mit dem Hyperwurm zur Erde; der Schlüssel landet im Umschlag »Absender: Die Person, die für dein Karriereende verantwortlich ist. Tut mir leid.« beim FBI-Chemielabor. CombatCookie liest, ballt die Fäuste. So erklärt sich, wie Irby einst auf ugghy »abgeladen« wurde und wie CombatCookie 2034 in den Homunkulusnebel kommt.</p>
+      <p class="src">IA3 »Der Wanderer«, »Eingriff in die Vergangenheit«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia1">
+      <div class="when"><b>2012 bis 2015</b></div>
+      <div class="what"><div class="t">Örz, uggys, Islands Aufstieg <span class="chip x">X</span><span class="chip ia1">IA1</span></div>
+      <p>Mona Lisa, Helikopter mit Raketenantrieb und Hyperwurm nach NGC 6193, Golddeal mit Dögöbörz Nüggät, Schiff 4-6692. Konrad Irby kauft ugghy. Die uggys greifen die Erde an, Floating Island rettet sie mit Äöüzz-Technik und wird »nach einer Periode demokratisch legitimierter Weltherrschaft« Diktator auf Lebenszeit. IA1 nennt für diesen Abschnitt keine Daten; die Anker liefern IA3 und 5071.</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia1 ia3 5071">
+      <div class="when"><b>14. November 2015</b><span class="auc"><b>2515-04-46 ÄÜC</b> (Bordcomputer)</span></div>
+      <div class="what"><div class="t">Entführung der 4-6692 in den Helixnebel <span class="chip x">X</span><span class="chip soti">SOTI</span><span class="chip ia1">IA1</span></div>
+      <p>Überbrückungsbefehl mit dem Bitmuster 1010011010 (dezimal 666): »Ich bin die Seele des Internets, ich darf das.« Fünf Stunden lang sind die vier für die Bordcomputer unsichtbar: die ersten Level auf SOTIs virtuellem Planeten. Wer den Planeten betritt, ist seitdem unsterblich (IA3-Postskriptum). Die Hintertür im Bordcomputer hat SOTI laut 5071 selbst beim Bau des Schiffs eingebaut.</p>
+      <p class="src">IA1 »Das Auge Gottes«; IA3 »Der Wanderer«; 5071 »Wahrheitsfindung«. Das Datum nennt 5071; 2515-04-46 beginnt um 17:58 UTC desselben Tages.</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia1 ia3 5071">
+      <div class="when"><b>8. Dezember 2015, 22:55</b><span class="auc"><b>2515-05-17 ÄÜC</b></span></div>
+      <div class="what"><div class="t">Verhaftung und Selbstbefreiung in ÖrzKäpitöl <span class="chip x">X-SOTI</span><span class="chip y">Y-SOTI</span><span class="chip ia1">IA1</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 009</span></div>
+      <p>Alexandra hat den Jungen in der Schleuse gefangen; Wärden DäÜnförgivör legt ihm vor dem Sondereinsatzkommando Handschellen und Bauchkette an (»Er hat die Raumstruktur manipuliert und mehrere Zeitparadoxa verursacht«). Im selben Moment springt Y-SOTI vom 4. September 2021 auf das Dach der Polizeizentrale, lädt sein Laptop-Akku in einem Elektronikgeschäft und holt sich selbst durch die Wagentür heraus, ohne dass es jemand aufzeichnet. In IA3 wissen die Bordcomputer nichts mehr von einem Passagier oder einem Notruf: objektiv hat es die Verhaftung nie gegeben.</p>
+      <p class="src">IA1 »Insurrection à la Äöüzz«; IA3 »Der Wanderer«; 5071 »ÖrzKäpitöl, 08. Dezember 2015«</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071 ia2">
+      <div class="when"><b>Dezember 2015 bis Januar 2016</b></div>
+      <div class="what"><div class="t">Der befreite SOTI stiehlt die 4-6692 mit Äüörüzü <span class="chip x">X-SOTI</span><span class="chip b5071">5071</span><span class="chip ia2">IA2</span></div>
+      <p>Die Crew hat die Katze an Bord gelassen. Der befreite SOTI startet das Schiff (»Anker los«), zwei Wochen Flug nach Söl, Landung mitten in Kanada, Funkwarnung an die Landbevölkerung. Für alle sieht es aus, als hätte eine Katze das Raumschiff entführt. Die Bordcomputer helfen ihm, weil sie »den Eigentümern dienen«. Er behält die Zeitmaschine und schickt seinen Befreier ohne sie zurück zum 4. September 2021.</p>
+      <p class="src">5071 »ÖrzKäpitöl«; IA2 »Kernel Panic« (Island: »Das Katzenviech hält ganz Kanada in Atem«)</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia1 ia2">
+      <div class="when"><b>2016 bis 2021</b></div>
+      <div class="what"><div class="t">Islands Diktatur <span class="chip x">X</span><span class="chip ia1">IA1</span><span class="chip ia2">IA2</span><span class="chip unsicher">Lücke</span></div>
+      <p>Die 4-6692 steht mit der Katze auf einem Acker in Kanada; das Sondereinsatzkommando, das sich näherte, gilt als vermisst. Die vier werden vom Gericht des Imperiums »zur Behebung des Schadens verurteilt«. IA1 endet, IA2 beginnt in einem Möbeltransporter am Pentagon. Was zwischen Anfang 2016 und Sommer 2021 geschieht, erzählt kein Buch.</p></div>
+    </div>
+
+    <div class="era"><span class="eyebrow">Infinite Adventures 2 und der Kern der Schleife</span><h3>September 2021</h3></div>
+
+    <div class="ev lane-both" data-book="ia2 5071">
+      <div class="when"><b>1. September 2021, 14:00 UTC</b><span class="auc">2520-06-40 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Island entführt die 4-6692; Y-SOTI in der Küche <span class="chip x">X</span><span class="chip y">Y-SOTI aus 2040</span><span class="chip ia2">IA2</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki −02</span></div>
+      <p>Während Floating Island das Schiff kapert, erscheint SOTI (frisch aus dem August 2040) in der Roboterküche, hält Orakel den Mund zu und instruiert ihn: »Du wirst auf exakt diesem Planeten landen«, einer Wasserwelt mit genau einer Felsinsel; die Haarrisse im Reaktor sind der Vorwand. Der Quantencomputer spielt mit. Orakel bekommt seine Pizza. Ein Kochroboter steckt später den weißen Plastikumschlag mit der Folie (»Nach dem Lesen restlos vernichten«) und einen Müsliriegel in den Laptop.</p>
+      <p class="src">IA2 »Abflug«, »Wie überrumpelt man einen Raumschiffentführer?«; 5071 »Müsli und Pizza«</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071 ia2">
+      <div class="when"><b>2. September 2021, 09:02:21 UTC</b><span class="auc">38.698750, −79.811495</span></div>
+      <div class="what"><div class="t">Der befreite SOTI landet im Monongahela National Forest <span class="chip x">X-SOTI</span><span class="chip b5071">5071</span></div>
+      <p>Per Laptop aus dem Januar 2016 (Kanada) in den Nieselregen. Der getarnte Türbö Tächyön 1033 steht schon auf der Lichtung: Die vier haben ihn vor der Island-Mission dort geparkt. Weil vier Leute mit »derselben« Zeitmaschine unterwegs sind, versteckt SOTI sein Exemplar im Green-Bank-Observatorium und zahlt in der Kantine mit schwarzer Karte (»Die PIN steht außen auf dem Buch«).</p>
+      <p class="src">5071 »Monongahela National Forest, 02. September 2021«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia2 5071">
+      <div class="when"><b>2. September 2021, Abend</b></div>
+      <div class="what"><div class="t">Blitz auf der Lichtung: Wolfgang und Schreiner <span class="chip x">X</span><span class="chip ia2">IA2 Postskriptum</span><span class="chip b5071">5071</span></div>
+      <p>Wolfgang und Marcor Schreiner finden den offenen Türbö Tächyön (»Zum Mars?«). SOTI schickt sie weg, ein Blitz schlägt ein, der Wald brennt, das Schiff verschwindet unter der Tarnung. In IA2 wirkt das wie ein Verschwinden des Jungen mit dem Raumschiff; in 5071 hat er nur die Türen geschlossen.</p>
+      <p class="src">IA2 »Postskriptum«; 5071 »02. September 2021«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia3 5071">
+      <div class="when"><b>3. September 2021, Morgen</b><span class="auc">2520-06-41 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Die Y-Protagonisten landen auf Bäumen <span class="chip y">Y aus 2034</span><span class="chip x">X-SOTI</span><span class="chip ia3">IA3</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 004–005</span></div>
+      <p>Zweiter Sprung (mit Raumhelmen) aus 2012. SOTI hat sie absichtlich über die Bäume verstreut, »um eine Funkkommunikation zu provozieren«. Vor dem Schiff verschließt der Junge seine Klettschuhe. Er fordert Schlüssel, Umschlag und »meine Zeitmaschine« (Eigentum und Herstellung ja, Besitz nein) und droht, die X-Ichs zu informieren. Alexandra zitiert Nüggäts Bedingung »persönlich und ohne Begleitung«; SOTI: »Dieser Hund.« Vertrag: zwei Erdwochen, SOTI wartet in Green Bank, »die Menschen dort kennen mich«. Die Crew speichert die Koordinaten der toten Briefkästen und Alexandras gefälschte Funksprüche für 2034 im Bordcomputer, findet den Tank voll und startet mit Tarnmodul. Die Erdkrümel in der Schleuse bleiben bis 2034 liegen.</p>
+      <p class="src">IA3 »Eingriff in die Vergangenheit«; 5071 »03. September 2021«</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="5071">
+      <div class="when"><b>3. September 2021, Dönkwön II</b><span class="auc">Krönöhr Mäk</span></div>
+      <div class="what"><div class="t">Y-SOTI schickt den Laptop allein nach Toronto und weckt Nüggät <span class="chip y">Y-SOTI aus 2040</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki −01b/−01c</span></div>
+      <p>Nüggät hat die Geisterstadt für sechs Tage gegen zwölf Titan-Mähdrescherhaspeln gemietet (»216 Wesen seiner Wahl«). SOTI lässt die Zeitmaschine ohne Passagiere zum Bezugspunkt springen, dem Tisch im U-Boot unter Toronto. Dann stellt er sich Nüggät vor: »Möchten Sie ein Läufer in meinem Schachspiel werden?« Vier Menschen mit weißem Umschlag würden kommen; auf der Wasserwelt warte Floating Island, den Nüggät ihm in den Helixnebel bringen soll. Nüggät wird das später als »leichtsinnige Idee«-Schelte erzählen.</p>
+      <p class="src">5071 »Dönkwön II, 03. September 2021«; IA3 »Ein alter Bekannter«</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="ia3 5071">
+      <div class="when"><b>Nacht 3./4. September 2021</b><span class="auc">»vier Örzröts zu früh«</span></div>
+      <div class="what"><div class="t">»Ey Nüggät, wir haben Post für dich!« <span class="chip y">Y</span><span class="chip y">Y-SOTI</span><span class="chip ia3">IA3</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 006–007</span></div>
+      <p>Der Tower fragt: »Sie gehören zum Gefolge von Dgbrz Nggt?« Orakel brüllt den Falschen wach, trägt den schwarz gekleideten Jungen genervt zum Raumhafen und sperrt ihn in den Türbö Tächyön. Dort liegt in einer Kiste die Zeitmaschine der Crew (»seit Tagen nicht gesehen, roch nach Abwasserkanal«). SOTI hackt das Schiff und steigt mit Antigravitation auf; Orakel beißt sich die Fingernägel kaputt.</p>
+      <p class="src">IA3 »Eingriff in die Vergangenheit«; 5071 »Dönkwön II«</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="ia3 5071">
+      <div class="when"><b>4. September 2021, Frühstück</b><span class="auc">2520-06-42 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Übergabe des Umschlags an Nüggät <span class="chip y">Y</span><span class="chip ia3">IA3</span><span class="chip wiki">Wiki 008</span></div>
+      <p>Am sechseckigen Hartwachstisch: »Ich werde euch nun aus den Klauen des Diktators befreien. Und da ihr heute hier sitzt, wird mir das wohl gelingen.« yury: »Sie müssen tun, was Sie für notwendig halten.« Nüggät lernt die Crew also 2021 als Zeitreisende kennen, bevor er sie in IA2 als X-Crew rettet. Das Fenster, das er 2034 nennt (2520-06-47 bis 2521-00-01 ÄÜC), entspricht dem 9. bis 12. September 2021; die Ankunft am 4. ist tatsächlich rund vier Örzröts früher.</p>
+      <p class="src">IA3 »Eingriff in die Vergangenheit«</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="5071">
+      <div class="when"><b>4. September 2021, Orbit von Dönkwön II</b></div>
+      <div class="what"><div class="t">Y-SOTI springt mit dem Laptop der Crew nach 2015 <span class="chip y">Y-SOTI</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 008</span></div>
+      <p>»Ein Ticket in die Vergangenheit bitte. Eine Gefangenenbefreiung steht an.« Akku 30 Prozent. Nach der Befreiung wird er vom befreiten SOTI ohne Maschine zurück in den Türbö Tächyön geschickt; dort sind »vielleicht ein paar Sekunden vergangen«. Er landet wieder auf Dönkwön II: Für Orakel steht das verloren geglaubte Schiff einfach wieder auf der Wachsplatte. Auf yurys Frage nach dem Laptop: »Welcher Laptop?«</p>
+      <p class="src">5071 »Dönkwön II«, »ÖrzKäpitöl«; IA3 »Eingriff in die Vergangenheit«</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071">
+      <div class="when"><b>4. September 2021, Green Bank</b></div>
+      <div class="what"><div class="t">Ein SOTI bringt dem anderen die Zeitmaschine <span class="chip x">X-SOTI</span><span class="chip y">Y-SOTI</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 011–012</span><span class="chip unsicher">bewusst unklar</span></div>
+      <p>Im Gang des Observatoriums: »Ich bin hier, um dir deine Zeitmaschine zurückzubringen … Ich bin diesmal nur im Raum gereist.« Der Wartende (»du«) gibt sie zurück: »Versteck es in einer Seitenkiste.« Laut Wiki ist der Bringer der Y-SOTI nach Maia (2036), der anschließend in den Türbö Tächyön springt und dort die Kiste befüllt. 5071 lässt offen, welcher SOTI hier subjektiv älter ist (»du meiner Zeit einige Jahre voraus«). Anschließend wandert der Wartende 29 Kilometer Luftlinie zur Lichtung.</p>
+      <p class="src">5071 »Monongahela National Forest, 04. September 2021«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia3 5071">
+      <div class="when"><b>4. September 2021, Abend</b></div>
+      <div class="what"><div class="t">Zwei Seelen des Internets an einem Raumschiff <span class="chip y">Y</span><span class="chip x">X-SOTI</span><span class="chip y">Y-SOTI</span><span class="chip ia3">IA3</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 012–015</span></div>
+      <p>Der Türbö Tächyön landet auf der Lichtung; der wartende SOTI klopft vergeblich, der innere SOTI blockiert abwechselnd beide Schleusen. Free und Alexandra frösteln (»Winter Is Coming«). Orakel aktiviert den Beladungsmodus; der innere SOTI tippt auf dem ausgeschalteten Laptop, gibt ihn ab und geht nach Westen. In 5071 heißt es dazu: Dieses »Ich« blieb in der Zeit zurück und ist »am 04. September 2021 untergegangen«. Der andere SOTI lädt den Akku mit Orakels Akkupack, ändert die Konfiguration (Regenbogen aus) und klickt Reset: »Ich habe eure Zeitreise ausgelöst.« Das Raumschiff bleibt 2021 im Wald.</p>
+      <p class="src">IA3 »Rückflug ins Restaurant«; 5071 »04. September 2021«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia2">
+      <div class="when"><b>September 2021, Tage später</b></div>
+      <div class="what"><div class="t">Wasserwelt, Nüggät, Helixnebel, Islands Sturz <span class="chip x">X</span><span class="chip ia2">IA2</span></div>
+      <p>Die entführte 4-6692 versinkt auf der Wasserwelt mit einer einzigen Insel; Nüggät kommt mit dem goldenen Nugget und den Koordinaten aus dem Umschlag, rettet die vier und liefert Floating Island wie bestellt im Helixnebel ab, wo er zur Spielfigur in SOTIs Welt wird (Levels 1 bis 11 in IA2). Wolfgang tauscht in Frees Namen im Toronto-Serverraum die Atomraketenziele aus; SOTIs Abschiedsgruß bleibt auf dem Bildschirm. Islands Diktatur endet, einige Wochen später übernehmen Blauhelme, die Erde wird föderale Republik. Danach Gnörk-Kartell, El Dörädö, der ugghy-Coup und die Flucht Nüggäts in den Carinanebel.</p>
+      <p class="src">IA2 Teil I und II; IA3 »Der Wanderer«</p></div>
+    </div>
+
+    <div class="era"><span class="eyebrow">Zwischen den Büchern</span><h3>2024 bis 2033</h3></div>
+
+    <div class="ev lane-y" data-book="5071">
+      <div class="when"><b>Nacht zum 19. Juni 2024</b><span class="auc">2523-03-30 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Y-SOTI programmiert den Reset-Punkt in Toronto <span class="chip y">Y-SOTI aus 2040</span><span class="chip obj">TMPE</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki −03, abweichend</span></div>
+      <p>Die Fabrik unter der Toronto City Hall ist »lange nach Islands Sturz« außer Betrieb. SOTI landet im Büro eines Sachbearbeiters für Baugenehmigungen, hüpft mit dem Laptop als Teleporter durch Etage −12 und die Kohlenstaubgänge, findet das unfertige U-Boot und programmiert den Reset-Knopf so, »als hätte ich die Maschine an diesem Ort gefunden und aus ihrem jahrzehntelangen Versteck entfernt«. Das Wiki lässt ihn den Laptop hier finden; 5071 lässt ihn mitbringen.</p>
+      <p class="src">5071 »Toronto, 19. Juni 2024«</p></div>
+    </div>
+
+    <div class="ev lane-obj" data-book="5071 ia3">
+      <div class="when"><b>Kurz nach dem 19. Juni 2024</b></div>
+      <div class="what"><div class="t">Der Laptop erscheint auf dem Tisch im U-Boot <span class="chip obj">TMPE</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki −01c</span></div>
+      <p>Von Dönkwön II (3. September 2021) ohne Passagiere abgeschickt. Er liegt dort zehn Jahre, bis Alexandra ihn 2034 herausträgt. In der Planungsrunde 2040 sagt SOTI, die Crew werde ihn »am 19.06.2024« finden; gemeint ist offenbar der Erscheinungstag, nicht der Fund.</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071">
+      <div class="when"><b>5. Januar 2026, Toronto</b></div>
+      <div class="what"><div class="t">»Klick.« <span class="chip y">Y-SOTI</span><span class="chip b5071">5071</span><span class="chip unsicher">Inhalt unbekannt</span></div>
+      <p>Ein Kapitel aus zwei Sätzen: keine Alternative zur Rückkehr zum Plan, »Verdammt sei das, was manche Menschen als Schicksal bezeichnen«. Was SOTI in Toronto tut, bleibt offen. Kandidat: das Plastikschild »Umgezogen in den Untergrund von Toronto« am Meeresgrund vor New York, das die Crew 2034 zur Fabrik führt (das Wiki hält es für »möglicherweise sein Verdienst«).</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia3 bg">
+      <div class="when"><b>5. November 2033 (Samstag)</b><span class="auc">Spieldatum, berechnet</span></div>
+      <div class="what"><div class="t">Islands Level 11 »Ruhe vor dem Sturm« <span class="chip x">Island in der VR</span><span class="chip ia2">IA2</span><span class="chip unsicher">Spielzeit</span></div>
+      <p>IA2 nennt für Level 11 einen »fünften November, ein Samstag« und ein Handy mit »03:07 Novemberfreitag«. Zwischen 2021 und 2040 ist der 5. November nur 2033 und 2039 ein Samstag. Die Daten in SOTIs Spielwelt müssen nicht mit der Erdzeit laufen.</p></div>
+    </div>
+
+    <div class="era"><span class="eyebrow">Infinite Adventures 3</span><h3>2034 bis 2036</h3></div>
+
+    <div class="ev lane-x" data-book="ia3">
+      <div class="when"><b>Frühjahr 2034</b><span class="auc">≈ 2532 ÄÜC</span></div>
+      <div class="what"><div class="t">Krieg im Carinanebel <span class="chip x">X</span><span class="chip ia3">IA3 Teil I</span></div>
+      <p>Orakels Verfolgung Nüggäts bis in den Schlüssellochnebel weckt die Roboter der Altherrscher (Felskugel um Dysonsphäre und Alderson-Scheibe). Lumina, Nögnög XII, Rötäry Kärnäg, Hönüktün V. Alexandra wird X von PHÖNIX; ihre Kolleginnen halten Funkstille. yury, Orakel und Free holen den Türbö Tächyön aus dem Wald: Erdkrümel in der Schleuse, tote Briefkästen im Navigationscomputer, drei Tage plus eine Woche plus ein Örzröt Wartezeit auf »Alexandras« Funksprüche, die in Wahrheit ihre Tagebucheinträge sind, 2021 von der Y-Crew hinterlegt.</p>
+      <p class="src">IA3 »Interplanetare Schnitzeljagd«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia3">
+      <div class="when"><b>Frühjahr 2034, Eta Carinae ABC 2</b></div>
+      <div class="what"><div class="t">CombatCookie, der Toaster und 121 rote Knöpfe <span class="chip x">X</span><span class="chip ia3">IA3</span><span class="chip wiki">Wiki 016</span></div>
+      <p>Bruchlandung in SOTIs nie bewohnter Stadt. CombatCookie ist mit Konrad Irbys CH-47 hergekommen (Schlüssel aus dem Umschlag von 2012). Orakel wirft den Vierfachtoaster aus der schwimmenden Etage in Manhattan; sie stürzt ab, überlebt aber (5071-Postskriptum). Orakel drückt in Etage 103 alle Knöpfe (»Struktur 512 deaktivieren …«), die Hochhäuser stürzen ein, die Roboterschiffe stürzen sich in die Sonne, der Krieg ist vorbei. Rückflug mit Helikopter und Hyperwurm nach ugghy: »Wo habt ihr denn meinen alten Helikopter gefunden?«</p>
+      <p class="src">IA3 »Kalte Rache«, »Grüße aus Manhattan«, »Abschied von einem Traum«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia3 5071">
+      <div class="when"><b>Frühjahr 2034, Ende des Kriegs</b></div>
+      <div class="what"><div class="t">Y-SOTI übergibt Nüggät den Umschlag <span class="chip y">Y-SOTI aus 2040</span><span class="chip x">X</span><span class="chip ia3">IA3</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki −01a</span></div>
+      <p>Im Silbergang der Däns Miräköl: Nüggät erschrickt wie eine Katze vor einer Gurke. SOTI (»Mister Albtraum«) übergibt den Umschlag mit Anweisungen: nach ugghy, an yury (nicht an Orakel: zu tollpatschig; nicht an Alexandra und Free: »zu gefährlich und zu verpeilt«), Treffpunkt Dönkwön II nennen, nichts an die Administration von Örz. Kurz darauf platzt Nüggät beim Festbuffet auf ugghy herein: zwischen 2520-06-47 und 2521-00-01 ÄÜC in Krönöhr Mäk erscheinen, »sonst fällt das Universum durch ein Paradoxon auseinander«. Dazu Verlobungsringe für Rüzwäk.</p>
+      <p class="src">5071 »Zwischen den Welten«; IA3 »Ein alter Bekannter«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia3">
+      <div class="when"><b>Frühjahr 2034, Örz</b></div>
+      <div class="what"><div class="t">Wiedersehensfest, Regenbogen, das Gespräch mit dem Bordcomputer <span class="chip x">X</span><span class="chip ia3">IA3</span></div>
+      <p>Alexandras Prophezeiung aus IA2 erfüllt sich: Regenbogen, eine Äöüzz-Mutter hält die Hand ihres Kindes, alle sind glücklich. Wärden: SOTI »war nie auf Örz«. Die Bordcomputer bestätigen für 2515-04-46 ÄÜC den Überbrückungsbefehl, aber keinen Passagier und keinen Notruf. Nüggät stürzt als goldroter Komet ins Gericht und wird verhaftet.</p>
+      <p class="src">IA3 »Der Wanderer«, »Eine Studie in Infrarot«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia3 5071">
+      <div class="when"><b>17. Mai 2034, 19:00:00 UTC</b><span class="auc">2532-03-33 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Sprung aus der Fabrik unter Toronto <span class="chip x">X werden Y</span><span class="chip obj">TMPE</span><span class="chip ia3">IA3</span><span class="chip wiki">Wiki 001/017</span></div>
+      <p>Das Schild am Meeresgrund, Islands Thronsaal mit SOTIs Nachricht an Wolfgang, dann die Fabrik: Alexandra holt den Laptop aus dem U-Boot. Zwei Stunden Laden mit einem Örz-Netzteil, das Update abgelehnt, Konfiguration <code>C:\TMPE\main.ini</code> (accuracy=seconds, coordinates=true, experimental_rainbow_interface=true, transport_environment=false, planet=sol3). Ziel: Monongahela, Datum aus Wolfgangs Mail. yury drückt Enter; der Raum krümmt sich ins Unendliche. Landung: ugghy, 9. Juli 2012.</p>
+      <p class="src">IA3 »Der Wanderer«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia3 5071">
+      <div class="when"><b>17. Mai 2034, 19:51:11 UTC</b><span class="auc">»Zwölf, dreizehn.«</span></div>
+      <div class="what"><div class="t">Rückkehr nach fünf Sekunden, Ende der Parallelität <span class="chip y">Y werden wieder eine Person</span><span class="chip x">X-SOTI</span><span class="chip ia3">IA3</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 015/018</span></div>
+      <p>Fünf Personen fallen eine Schiffsbodenhöhe tief auf den Fabrikboden: »Die längsten fünf Sekunden meines Lebens.« Der Laptop wird in der Hydraulikpresse zerstört; SOTI selbst legt ihn darunter: »Eine Welt ohne Zeitreisen ist ab heute eine bessere Welt.« Orakel behält Klumpen und Akku (bis 2040). Zu Fuß die Carlton Street entlang zur 4-6692 im Riverdale Park, Abflug in den Helixnebel. 5071 nennt die Uhrzeit auf dem Display; die Y-Crew hat subjektiv rund zwei Wochen und neun Jahre Erdkalender hinter sich.</p>
+      <p class="src">IA3 »Rückflug ins Restaurant«; 5071 »Zwischen den Welten«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia3">
+      <div class="when"><b>Mai 2034, Burg über dem Helixnebel</b></div>
+      <div class="what"><div class="t">Die Geschichte der Äöüzz und das Postskriptum <span class="chip x">X</span><span class="chip ia3">IA3</span></div>
+      <p>Im »Restaurant am Ende des Universums« ritzt SOTI den Zeitstrahl in den Tisch (−752, −47, Plejaden, NGC 6193). Später, nachts, zu yury und Free: Nüggät hat Floating Island zu ihm gebracht; Island lebt als Professor in der virtuellen Welt. »Wie alle Lebewesen eurer Realität, die meinen virtuellen Heimatplaneten mindestens einmal betreten haben«: Die vier sind unsterblich. Laut 5071 kennt dieser SOTI die Äöüzz-Geschichte nur, weil die Crew sie ihm 2040 erzählt haben wird.</p>
+      <p class="src">IA3 »Äquatorialer Burgbesuch«, »Postskriptum«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="ia3 bg">
+      <div class="when"><b>3. September 2034 (Sonntag)</b><span class="auc">Spieldatum</span></div>
+      <div class="what"><div class="t">Islands Level 13 »Technologiesprung« <span class="chip x">Island in der VR</span><span class="chip ia3">IA3</span><span class="chip unsicher">Spielzeit</span></div>
+      <p>Leeres Krankenhaus in Wuppertal, Handy zeigt den 3. September 2034, fahrerloses Taxi, später ICE 666 »nach Leerfahrt« mit exakt zehn Jahren Verspätung (5.259.600 Minuten) und der schwarze Junge als »Zwischengegner«: »Ich beziehe meine Kraft aus deiner Angst.« Das Datum liegt nach dem Toronto-Sprung, obwohl das Kapitel in Teil I steht; es ist ein Datum in SOTIs Spiel.</p>
+      <p class="src">IA3 »SOTIs Auge«, »Der Zwischengegner«</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="ia3">
+      <div class="when"><b>2034/2035, »viele Monate später«</b></div>
+      <div class="what"><div class="t">Das Buch im Tresor, der Laptop im Drucker <span class="chip y">Y-SOTI</span><span class="chip obj">TMPE</span><span class="chip ia3">IA3</span><span class="chip wiki">Wiki 010</span></div>
+      <p>Nüggät liest im Archiv des Imperiums die Geschichte des interstellaren Funkverkehrs und findet das Buch Monate später auf einem Stapel Goldbarren: »Entliehen an Dögöbörz Nüggät. Gestern.« Der Laptop samt Netzteil liegt in der untersten Druckerschublade der Däns Miräköl. Auf die Frage, wie lange schon: »Das kann ich nicht sagen … Ich kann nicht.«</p>
+      <p class="src">IA3 »Das Archiv des Imperiums«, »Plejadische Geheimnisse«</p></div>
+    </div>
+
+    <div class="ev lane-both" data-book="ia3 5071">
+      <div class="when"><b>6. Juni 2036, Maia I</b><span class="auc">2534-02-36 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Die Eigentumsurkunde für Ziskö verglüht <span class="chip y">Y-SOTI</span><span class="chip x">Nüggät</span><span class="chip ia3">IA3</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 011</span></div>
+      <p>Plejadenurlaub, Kältegefühl, SOTI als blinder Passagier (»Schwarzfahren kostet vierhundert Äzz«). Elektra VI: SOTI stiehlt das Nugget, Nüggät gräbt ein 600 Jahre altes Kugelschiff aus. Maia I, 520 °C: Planetengranate, schwarzes Loch, beide Schiffe zerstört. Im Bunker die Folie; SOTI nimmt zum ersten Mal seit Jahrhunderten die Brille ab, Nüggät: »Es tut mir leid, Mensch.« Die Urkunde wird mit dem Laser vernichtet. Der Laptop kommt unversehrt aus dem Drucker.</p>
+      <p class="src">IA3 »Plejadische Geheimnisse«, »Allein auf Elektra VI«, »Maia«; 5071 »Maia I, 06. Juni 2036«</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="5071">
+      <div class="when"><b>5. Oktober 2105, Örz</b><span class="auc">≈ 2597 ÄÜC</span></div>
+      <div class="what"><div class="t">Nüggäts Blick in die Zukunft <span class="chip y">Y-SOTI</span><span class="chip y">Y-Nüggät</span><span class="chip b5071">5071</span></div>
+      <p>Nüggät will die Zukunft sehen, um in seiner Gegenwart die richtigen Aktien zu kaufen. Das Kapitel besteht nur aus Base64; entschlüsselt: »So ein Kack!«, fluchte Free. »Hier steht alles auf Chinesisch!« Free lebt also 2105 auf Örz, wie es das Unsterblichkeits-Postskriptum verlangt. Die Musikliste nennt dieses Kapitel »2109«, ein Tippfehler.</p></div>
+    </div>
+
+    <div class="ev lane-y" data-book="5071">
+      <div class="when"><b>5. Oktober 2036, Örz</b><span class="auc">2534-04-41 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Abschied von Nüggät <span class="chip y">Y-SOTI</span><span class="chip b5071">5071</span><span class="chip wiki">Wiki 011</span></div>
+      <p>Zurück in Nüggäts Gegenwart, vier Monate nach Maia: »Ich danke dir aus tiefstem Herzen, mein treuer Freund.« SOTI: »Shitsurei shimasu«, ändert die Formularparameter und verschwindet. Laut Wiki springt er jetzt zum 4. September 2021 auf die Erde (siehe Green Bank).</p></div>
+    </div>
+
+    <div class="era"><span class="eyebrow">5071</span><h3>August 2040</h3></div>
+
+    <div class="ev lane-soti" data-book="5071">
+      <div class="when"><b>August 2040, Morgengrauen</b><span class="auc">2538-01 ÄÜC (berechnet)</span></div>
+      <div class="what"><div class="t">Ausbruch 2040: SOTI landet im Ferienhaus <span class="chip soti">Ur-SOTI</span><span class="chip x">X</span><span class="chip b5071">5071</span></div>
+      <p>Ziel war 2050, ein Umrechnungsfehler macht 2040 daraus. SOTI und Fnbsrd fallen aus dem Portal ins Wohnzimmer der vier an der Nordsee (Schleswig-Holstein); die Kristallkugel löst einen Metallbrand aus. Alexandra kommt mit der Axt, lächelt und holt einen Eimer. »Guten Morgen, Soti. Wieso brennt das Wohnzimmer?« Die Crew kennt ihn seit Jahrzehnten, er sie nicht. Am Strand erfährt er, dass seine Stadt im Carinanebel längst Ruine war und die Mäuse ausgestorben sind.</p>
+      <p class="src">5071 »Ausbruch 2040«</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071">
+      <div class="when"><b>August 2040, Tage später</b></div>
+      <div class="what"><div class="t">Verfolger, Flucht in den Helixnebel, Schiedsgericht <span class="chip soti">SOTI</span><span class="chip x">X</span><span class="chip b5071">5071</span></div>
+      <p>Zwei SOTI-Doppelgänger mit weißen Mäusen schießen mit weißen Lasern; Alexandra kapert einen autonomen Bus, Notstart der 4-6692. In der Burg: Restaurantschlüssel 5071, SOTIs dunkle Wohnung 3:5071, Einbruch der Verfolger, Glashaus, Ausbruch, Laser-Apokalypse. SOTI erkennt aus Todesangst, dass die Burg aus seinem eigenen Stoff besteht, und macht die Angreifer zu Bettlern. Das Schiedsgericht spricht ihn frei. Aus dem Laptop der Verfolger (Display: ein deformierter Zeitschlüssel) wird die Zeitmaschine, die Orakel als Klumpen in der Tasche hat.</p>
+      <p class="src">5071 »Grüße aus der Vergangenheit«, »Wahrheitsfindung im Helixnebel«</p></div>
+    </div>
+
+    <div class="ev lane-soti" data-book="5071">
+      <div class="when"><b>August 2040, Restaurant</b></div>
+      <div class="what"><div class="t">Die Planungsrunde und der Abschied durch die Wand <span class="chip soti">SOTI wird Y-SOTI</span><span class="chip x">X</span><span class="chip b5071">5071</span></div>
+      <p>Die vier erklären SOTI Station für Station, was er in ihrer Vergangenheit getan haben wird: Toronto 2024, Küche 2021, Nüggäts Schiff 2034, Dönkwön 2021, ÖrzKäpitöl 2015. Orakels Geistesblitz: Der Sprung in die tiefe Vergangenheit (Planet erschaffen, Hintertür in die 4-6692, Entführung 2015) muss nach der Befreiung geschehen. Die Crew erzählt ihm die Geschichte der Äöüzz, damit er sie 2034 erzählen kann; Fnbsrd erklärt die vierzehnbeinigen Spinnen und Örzlängü. »Zeit zu gehen«: SOTI drückt den Laptop durch die Burgmauer, kommt einmal zurück (»Kaum.«) und ist fort. Fnbsrd bleibt in der Burg.</p>
+      <p class="src">5071 »Wahrheitsfindung im Helixnebel«, »Holz und Stein«</p></div>
+    </div>
+
+    <div class="ev lane-x" data-book="5071">
+      <div class="when"><b>Nach 2034, undatiert</b></div>
+      <div class="what"><div class="t">CombatCookie und das Tor <span class="chip x">X</span><span class="chip b5071">5071 Postskriptum</span><span class="chip unsicher">offen</span></div>
+      <p>Auf Eta Carinae ABC 2, allein zurückgelassen, findet die Elektronikerin den Wolframwürfel und den Torbogen in der Portaletage, verbrennt sich an der Kugel und wagt einen Versuch. Ob sie das Portal öffnet und wohin, sagt das Buch nicht.</p></div>
+    </div>
+
+  </div>
+
+  <h2 id="route-crew">Die Reise der vier in ihrer eigenen Reihenfolge</h2>
+  <p>So erleben Alexandra, Free, Orakel und yury ihre Zeitreise aus IA3, Teil II. Subjektiv vergehen etwa zwei Wochen; auf dem Kalender in Toronto 51 Minuten.</p>
+  <ol class="route">
+    <li><div><span class="d">17.05.2034 19:00 UTC · Toronto, Fabrik</span><br>Enter. Ziel: Monongahela, 2021. Konfiguration noch mit <code>planet=sol3</code> und Regenbogen.</div></li>
+    <li><div><span class="d">09.07.2012 14:10 UTC · ugghy, Kanalisation</span><br>Fehlsprung (Bluescreen), laut SOTI Absicht. Zeitauskunft, Akku 70 Prozent. Am Raumhafen Irbys Helikopter gestohlen (Schlüssel aus 2034).</div></li>
+    <li><div><span class="d">Juli 2012 · Erde, FBI-Chemielabor</span><br>Helikopter abgeliefert, Schlüssel im Umschlag an CombatCookie. Zweiter Sprung, diesmal mit Helmen.</div></li>
+    <li><div><span class="d">03.09.2021, Morgen · Monongahela National Forest</span><br>Landung auf Bäumen. X-SOTI vor dem getarnten Türbö Tächyön. Vertrag: zwei Wochen. Briefkasten-Koordinaten und Funksprüche für 2034 hinterlegt.</div></li>
+    <li><div><span class="d">Nacht 03./04.09.2021 · Dönkwön II</span><br>Landung neben der Däns Miräköl. Orakel weckt den falschen Schläfer; das Schiff mit dem Laptop verschwindet.</div></li>
+    <li><div><span class="d">04.09.2021, Frühstück · Krönöhr Mäk</span><br>Umschlag an Nüggät. Das Schiff steht wieder da, ohne Laptop. Rückflug mit Y-SOTI.</div></li>
+    <li><div><span class="d">04.09.2021, Abend · Monongahela</span><br>Zwei SOTIs, Beladungsmodus, der innere gibt den Laptop ab. Der äußere lädt, konfiguriert, klickt Reset.</div></li>
+    <li><div><span class="d">17.05.2034 19:51:11 UTC · Toronto, Fabrik</span><br>Alle zurück, das Schiff bleibt 2021 (und wird 2034 mit Erdkrümeln gefunden). Laptop gepresst. Y wird wieder die einzige Version.</div></li>
+  </ol>
+  <div class="note ok">Was sie in 2034 vorher gefunden haben, haben sie in 2021 selbst hinterlegt: die Koordinaten der toten Briefkästen, die Funksprüche, den vollen Wasserstofftank (SOTI), die Erdkrümel. Und was sie 2034 unmöglich fanden, war ihr eigenes Werk.</div>
+
+  <h2 id="route-soti">Die Reise der Seele des Internets</h2>
+  <p>SOTI erlebt seine Geschichte in einer anderen Reihenfolge als der Kalender. 5071 erzählt den Weg in der ersten Person (»Ich«) und wechselt für den befreiten SOTI in die zweite (»Du«). Die Positionen in Klammern sind die des Wiki-Zeitstrahls (oldid 2746).</p>
+  <h3>Der SOTI aus dem Carinanebel (»Ich«)</h3>
+  <ol class="route">
+    <li><div><span class="d">Ferne Vergangenheit · Eta Carinae ABC 2</span><br>Jahrhunderte Gefangenschaft, Fnbsrd bringt den uneingeschränkten Schlüssel.</div></li>
+    <li><div><span class="d">August 2040 · Ferienhaus, Nordsee</span><br>Ankunft im Wohnzimmer, Brand, Verfolger, Flucht in den Helixnebel, Burg, Laptop der Verfolger, Planungsrunde.</div></li>
+    <li><div><span class="d">01.09.2021 14:00 · Küche der 4-6692 (−02)</span><br>Orakel instruiert; Umschlag mit Wasserwelt-Koordinaten vom Kochroboter.</div></li>
+    <li><div><span class="d">05.01.2026 · Toronto</span><br>»Klick.« Inhalt unbekannt.</div></li>
+    <li><div><span class="d">Nacht zum 19.06.2024 · Toronto, Fabrik (−03/−01c)</span><br>Reset-Punkt auf den Tisch im U-Boot programmiert.</div></li>
+    <li><div><span class="d">Frühjahr 2034 · Däns Miräköl (−01a)</span><br>Umschlag und Anweisungen an Nüggät im Silbergang.</div></li>
+    <li><div><span class="d">03.09.2021 · Krönöhr Mäk (−01b)</span><br>Laptop allein nach Toronto 2024 geschickt. Nüggät gewarnt. Geschlafen, von Orakel zum Raumhafen getragen, Türbö Tächyön mit dem Laptop der Crew gekapert (007).</div></li>
+    <li><div><span class="d">08.12.2015 22:55 · ÖrzKäpitöl (009)</span><br>Sich selbst aus dem Polizeiwagen geholt. Der Befreite behält die Maschine und schickt »Ich« zurück in den Türbö Tächyön.</div></li>
+    <li><div><span class="d">04.09.2021 · Orbit Dönkwön II, dann Lichtung (012–014)</span><br>Ohne Laptop zurück, Landung, Rückflug mit der Crew. Auf der Lichtung ist er der innere SOTI mit dem Laptop aus der Kiste, gibt ihn ab, geht nach Westen und bleibt 2021. 5071: »am 04. September 2021 untergegangen«.</div></li>
+  </ol>
+  <h3>Der befreite SOTI (»Du«, im Wiki X-SOTI)</h3>
+  <ol class="route">
+    <li><div><span class="d">Vor 2015 · Helixnebel</span><br>Nach dem »Sprung in die tiefe Vergangenheit« (Orakels Geistesblitz): Planet erschaffen, Hintertür in die 4-6692, Zeitmaschine und Fnbsrd auf dem Planeten zurückgelassen. Diesen Abschnitt erzählt kein Buch; er ist die Bedingung dafür, dass es 2015 einen Gefangenen gibt.</div></li>
+    <li><div><span class="d">14.11.2015 · Helixnebel</span><br>Entführung der 4-6692 (IA1), Gefangennahme durch Alexandra, drei Wochen Flug nach Örz.</div></li>
+    <li><div><span class="d">08.12.2015 · ÖrzKäpitöl (009)</span><br>Befreit. 4-6692 mit Äüörüzü gestohlen, zwei Wochen zur Erde, Landung in Kanada. Behält die Zeitmaschine.</div></li>
+    <li><div><span class="d">02.09.2021 09:02 · Monongahela</span><br>Sprung aus 2016. Laptop in Green Bank versteckt. Abends Wolfgang und Schreiner verscheucht (IA2-Postskriptum).</div></li>
+    <li><div><span class="d">03.09.2021 · Lichtung (005)</span><br>Schuhe verschlossen, Vertrag mit den Y-Protagonisten. Wartet in Green Bank, wo ihn niemand wahrnimmt.</div></li>
+    <li><div><span class="d">04.09.2021 · Green Bank, dann Lichtung (011–015)</span><br>Bekommt den Laptop gebracht und zurückgegeben (»Versteck es in einer Seitenkiste«). Abends nimmt er dem inneren SOTI die Maschine ab und klickt Reset. Als Nicht-Zeitreisender wird er mitgenommen, bleibt aber »er selbst«.</div></li>
+    <li><div><span class="d">17.05.2034 · Toronto, dann Burg</span><br>Presst den Laptop, erzählt im Restaurant die Geschichte der Äöüzz (die er laut 5071 erst 2040 von der Crew erfahren hat), führt das Postskriptum-Gespräch, ist Islands Gastgeber.</div></li>
+    <li><div><span class="d">2034/2035 bis 06.06.2036 · Örz, Plejaden, Maia (010–011)</span><br>Buch im Tresor, Laptop im Drucker, Elektra VI, Maia I, Urkunde vernichtet, Ausflug nach 2105, zurück zum 05.10.2036. Laut Wiki danach zur Lichtung am 04.09.2021.</div></li>
+  </ol>
+  <div class="note warn">Hier liegt die eine Stelle, an der die Quellen nicht sauber zusammenpassen: Das Wiki schickt den Y-SOTI nach Maia zur Lichtung 2021 und lässt ihn dort den Laptop in die Kiste legen. 5071 lässt den Bringer im Green-Bank-Gang sagen, er sei »diesmal nur im Raum gereist« und kenne die Frist nicht. Beides lässt sich nicht gleichzeitig wörtlich nehmen. 5071 kommentiert das selbst: »Du bist ich, aber noch nicht.«</div>
+
+  <h2 id="objekte">Weltlinien der Objekte</h2>
+  <p>Die Bücher sind dann konsistent, wenn jeder Gegenstand eine lückenlose Weltlinie hat, auch wenn sie im Kreis läuft. Die Reihenfolge unten ist die des Gegenstands, nicht die des Kalenders.</p>
+
+  <h3>TMPE, die Zeitmaschine</h3>
+  <ol class="route">
+    <li><div><span class="d">Herkunft</span><br>Ein Zeitschlüssel der Altherrscher, zu einem Display »deformiert«, in Laptopform getarnt (Design »um ein paar Jahrzehnte in der Zeit vertan«). Betriebssystem »TMPE OS XP«, Willkommensdemo, Helax-Wallet, Feedback-Formular mit Douglas-Adams-Zitat: SOTI hat die Software geschrieben, nicht das Gerät gebaut.</div></li>
+    <li><div><span class="d">August 2040</span><br>Die Verfolger bringen ihn in die Burg; SOTI nimmt ihn an sich.</div></li>
+    <li><div><span class="d">01.09.2021 → 05.01.2026 → 19.06.2024 → 03.09.2021</span><br>SOTIs Route. Am 19.06.2024 wird der Reset-Punkt einprogrammiert.</div></li>
+    <li><div><span class="d">03.09.2021 → kurz nach 19.06.2024</span><br>Allein von Dönkwön II auf den Tisch im U-Boot geschickt. Liegt zehn Jahre unter Toronto.</div></li>
+    <li><div><span class="d">17.05.2034 → 09.07.2012 → Juli 2012 → 03.09.2021</span><br>Die Reise der Crew, inklusive Kanalisation.</div></li>
+    <li><div><span class="d">04.09.2021 → 08.12.2015</span><br>Von Y-SOTI aus der Kiste im Türbö Tächyön genommen, Sprung nach ÖrzKäpitöl; Akku 30 Prozent, in einem Elektronikgeschäft geladen.</div></li>
+    <li><div><span class="d">08.12.2015 → Januar 2016 → 02.09.2021</span><br>Beim befreiten SOTI: Flug nach Kanada, Sprung nach Monongahela, Versteck in Green Bank.</div></li>
+    <li><div><span class="d">04.09.2021</span><br>Zurück in eine Seitenkiste des Türbö Tächyön, abends in den Händen des inneren SOTI, dann beim äußeren: Reset.</div></li>
+    <li><div><span class="d">17.05.2034 → August 2040</span><br>Hydraulikpresse. Klumpen und Akku in Orakels Tasche, 2040 auf einem Handtuch zerlegt: »Wir sind zu früh geflohen, um das da zu begreifen.«</div></li>
+  </ol>
+  <details open><summary>Und der Laptop aus IA1 (New York 2012, Manhattan 2001, Meeresgrund)?</summary>
+    <p>Kein Buch verbindet ihn ausdrücklich mit der Weltlinie oben. Zwei Lesarten: (a) Es ist dasselbe Gerät, und der befreite SOTI hat es zwischen Dezember 2015 und September 2021 in die Büroetage von 2012 gelegt und später vom Meeresgrund geholt (das Wiki hält die »Umzugsmitteilung« für sein Werk). Dann ist auch die Willkommensdemo von 2050 bis 2001 sein Humor. (b) Es ist ein zweites Exemplar; dann bleibt es am Meeresgrund, und das Schild ist nur ein Wegweiser nach Toronto. Das Schild selbst wird in IA3 gefunden, aber von niemandem aufgestellt, den ein Buch nennt.</p>
+  </details>
+
+  <h3>Der weiße Plastikumschlag</h3>
+  <ol class="route">
+    <li><div><span class="d">01.09.2021</span><br>Aus dem Küchenregal der 4-6692, Folie mit Koordinaten der Wasserwelt, versiegelt vom Kochroboter (Smiley-Müsliriegel als Beigabe).</div></li>
+    <li><div><span class="d">Frühjahr 2034</span><br>SOTI an Nüggät im Silbergang; Nüggät an yury beim Festbuffet auf ugghy.</div></li>
+    <li><div><span class="d">17.05.2034 → 2012 → 04.09.2021</span><br>In yurys Anzugtasche durch Kanalisation und Wald. Free: »Guck mal, ob Spuren einer Neuversiegelung dran sind.«</div></li>
+    <li><div><span class="d">04.09.2021 → September 2021</span><br>An Nüggät in Krönöhr Mäk. Er fliegt zur Wasserwelt und rettet die X-Crew (IA2). Inhalt: von Anfang an SOTIs Koordinaten, nie von einem Menschen gelesen.</div></li>
+  </ol>
+
+  <h3>Konrad Irbys CH-47 und ihr Schlüssel</h3>
+  <ol class="route">
+    <li><div><span class="d">vor 2012</span><br>Irbys Helikopter (belgische Flagge, später rot-gold) steht auf ugghy; er hat ihn einst zur Ankunft dort benutzt.</div></li>
+    <li><div><span class="d">09.07.2012</span><br>Y-Crew stiehlt ihn mit CombatCookies Schlüssel aus 2034 und fliegt zur Erde.</div></li>
+    <li><div><span class="d">2012 → 2034</span><br>CombatCookie fliegt mit Helikopter und Hyperwurm in den Homunkulusnebel, legt die Schlüssel in Etage 103 ab.</div></li>
+    <li><div><span class="d">2034</span><br>Alexandra findet die Schlüssel; Rückflug nach ugghy; Irby nimmt das Fluggerät als »verloren geglaubtes Kind« entgegen. Der Schlüssel hat keinen Ursprung.</div></li>
+  </ol>
+
+  <h3>Koordinaten und Funksprüche</h3>
+  <p>Die toten Briefkästen 1, 47, 5, 17 und Eta Carinae ABC 2 sowie »Alexandras« Sendungen werden 2034 empfangen, weil die Y-Crew sie am 3. September 2021 mit dem Wissen von 2034 eingespeichert hat. Die Sendungen sind Alexandras Tagebucheinträge mit erfundener Funkverpackung; sie selbst hat nie von Briefkästen gesprochen.</p>
+
+  <h2 id="pruefung">Konsistenzprüfung</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Behauptung im Buch</th><th>Gegenprobe</th><th>Ergebnis</th></tr></thead>
+    <tbody>
+      <tr><td>Nüggäts Fenster 2520-06-47 bis 2521-00-01 ÄÜC; Ankunft »vier Örzröts zu früh«</td><td class="mono">09.09.2021 00:01 bis 12.09.2021 12:22 UTC; 4 Örzröts = 4,7 Tage → 04.09.2021</td><td>passt zu 5071 (3./4. September)</td></tr>
+      <tr><td>Überbrückungsbefehl 2515-04-46 ÄÜC = 14.11.2015 (5071)</td><td class="mono">2515-04-46 beginnt am 14.11.2015 um 17:58 UTC</td><td>passt, auf den Örzröt genau</td></tr>
+      <tr><td>Ablieferung auf Örz 2515-05-17 ÄÜC, »drei Wochen später«, Selbstbefreiung 08.12.2015</td><td class="mono">2515-05-17 = 08.12.2015 04:20 UTC; 24 Tage nach dem 14.11.</td><td>passt</td></tr>
+      <tr><td>Sprung 1 landet 2512-04-30 47:44:15 ÄÜC</td><td class="mono">= 09.07.2012 14:10:00 UTC, wie yury im Kopf rechnet</td><td>passt</td></tr>
+      <tr><td>Nüggät: »2597 ÄÜC? 2105 UTC wäre das.«</td><td class="mono">2597-00-00 = 25.04.2105; 05.10.2105 = 2597-02-40</td><td>passt</td></tr>
+      <tr><td>Alexandras Prophezeiung (IA2): Regenbogen, Äöüzz-Kind an der Hand der Mutter, »Carina! Es ist vorbei.«</td><td>Fest im Park nach dem Carinakrieg (IA3)</td><td>erfüllt</td></tr>
+      <tr><td>Torwächter zu Orakel (IA2): »Geh, oder du wirst deine Freunde verlieren«</td><td>Orakel verfolgt Nüggät und löst den Krieg aus; niemand der vier stirbt</td><td>offen, eher Warnung als Vorhersage</td></tr>
+      <tr><td>Postskriptum IA3: Unsterblichkeit aller Planetenbesucher</td><td>Base64-Kapitel 2105: Free lebt auf Örz</td><td>erfüllt</td></tr>
+      <tr><td>Wiki −03: SOTI findet die Maschine in der Fabrik</td><td>5071: SOTI bringt sie aus 2040 mit und programmiert nur den Reset-Punkt</td><td>Wiki ist älter, 5071 überschreibt</td></tr>
+      <tr><td>Wiki 015: Y-SOTI wird durch den Reset in die Fabrik befördert</td><td>5071: der zurückbleibende SOTI geht nach Westen und bleibt 2021</td><td>Widerspruch, 5071 gilt</td></tr>
+      <tr><td>5071-Plan: »ihr werdet ebendiesen Laptop am 19.06.2024 finden«</td><td>IA3: Fund am 17.05.2034</td><td>Ungenauigkeit im Dialog; der Laptop erscheint 2024 und wird 2034 gefunden</td></tr>
+      <tr><td>Free 2040: »Vor fünfzehn Jahren vielleicht … während einer Zeitreise« über die Eigentumsfrage</td><td>Gespräch war am 03.09.2021, also 19 Jahre vorher</td><td>»vielleicht« deckt es ab</td></tr>
+      <tr><td>Islands Level 13 zeigt den 03.09.2034, Kapitel steht vor dem Sprung vom 17.05.2034</td><td>Spielwelt-Datum, dazu ICE mit exakt 10 Jahren Verspätung</td><td>kein Kalenderdatum, Spielinterna</td></tr>
+      <tr><td>Musikliste 5071: »Örz, 05. Oktober 2109«</td><td>Kapitelüberschrift: 2105</td><td>Tippfehler</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="offen">Offene Punkte</h2>
+  <ul class="tight">
+    <li><b>Der Ursprung der Zeitmaschine.</b> Die Verfolger bringen sie 2040 in die Burg; woher sie sie haben, sagt niemand. Ob das Gerät von IA1 (2001/2012, Meeresgrund) auf derselben Weltlinie liegt, bleibt Deutung.</li>
+    <li><b>Der Sprung in die tiefe Vergangenheit.</b> Planet im Helixnebel, Hintertür in der 4-6692, das Leben als Gastgeber vor 2015: nur als Plan in 2040 skizziert. Wann der befreite SOTI ihn antritt, bleibt offen. Im August 2040 ist der Restaurantbetreiber jedenfalls abwesend, der Tisch verstaubt.</li>
+    <li><b>Wo ist der befreite SOTI im August 2040?</b> Er fragt es selbst; yury: »Weil wir alle die Antwort kennen.« Die naheliegende Antwort ist der Punkt darüber.</li>
+    <li><b>Toronto, 5. Januar 2026.</b> Ein Kapitel ohne Handlung. Vermutung: das Schild am Meeresgrund.</li>
+    <li><b>Der SOTI, der 2021 nach Westen ging.</b> 5071 nennt ihn »untergegangen«. Ob er der Junge im Zug (IA3, Level 21) oder der Dunkle mit den Eisblumen an den Kirchenfenstern in Toronto ist, bleibt Andeutung.</li>
+    <li><b>Wie Nüggäts Vorwissen in IA2 entsteht,</b> ist gelöst: Er trifft die Y-Crew 2021, bevor er die X-Crew rettet. Nicht gelöst ist, warum er »jahrhundertelange Raumerfahrung« hat, wenn er »über hundert Jahre alt« ist und ein 600 Jahre altes Schiff »älter als er« ist.</li>
+    <li><b>Die Verfolger.</b> Vier Wesen mit SOTIs Gestalt, Adressen fc00:100:3:13cf:3:7:2::/126, im Glashaus. Ihr Weg durch den Würfel am Portal und ihr Verhältnis zu den Zeitjägern, die Fnbsrd befürchtet, bleiben offen.</li>
+    <li><b>2016 bis 2021.</b> Fünf Jahre, in denen die 4-6692 mit Äüörüzü in Kanada steht und Island regiert. Kein Buch erzählt sie.</li>
+  </ul>
+
+  <h2 id="auc">ÄÜC-Umrechnung</h2>
+  <p>Die Formel aus den Bonuskapiteln (IA2/IA3): 1 Örzklök = 7909306972/9192631770 s ≈ 0,8603 s; 1 Örzbit = 7⁹ Örzklöks ≈ 402 Tage; Epoche 1. Januar −752 UTC, keine Schaltsekunden. Felder beginnen bei 0.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Erdzeit (UTC)</th><th>ÄÜC</th><th>Quelle</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">−47-01-01</td><td class="mono">640-05-19 33:21:35</td><td>IA3 Bonus</td></tr>
+      <tr><td class="mono">1430-11-14 07:08:34</td><td class="mono">1984-00-00 00:00:00</td><td>IA2/IA3 Bonus</td></tr>
+      <tr><td class="mono">2001-09-11</td><td class="mono">2502-05-36</td><td>berechnet</td></tr>
+      <tr><td class="mono">2012-07-09 14:10:01</td><td class="mono">2512-04-30 47:44:15</td><td>IA3, Wiki</td></tr>
+      <tr><td class="mono">2015-11-14 17:58</td><td class="mono">2515-04-46 00:00</td><td>berechnet (Bordcomputer nennt den Tag)</td></tr>
+      <tr><td class="mono">2015-12-08 04:20</td><td class="mono">2515-05-17 00:00</td><td>berechnet (IA3 nennt den Tag)</td></tr>
+      <tr><td class="mono">2021-09-01 14:00</td><td class="mono">2520-06-40 32:38</td><td>berechnet</td></tr>
+      <tr><td class="mono">2021-09-04</td><td class="mono">2520-06-42 35:41</td><td>berechnet</td></tr>
+      <tr><td class="mono">2021-09-09 00:01</td><td class="mono">2520-06-47 00:00</td><td>berechnet (Nüggäts Fenster, Beginn)</td></tr>
+      <tr><td class="mono">2021-09-12 12:22</td><td class="mono">2521-00-01 00:00</td><td>berechnet (Nüggäts Fenster, Ende)</td></tr>
+      <tr><td class="mono">2024-06-19</td><td class="mono">2523-03-30</td><td>berechnet</td></tr>
+      <tr><td class="mono">2034-05-17 19:00</td><td class="mono">2532-03-33 07:26</td><td>berechnet</td></tr>
+      <tr><td class="mono">2036-06-06</td><td class="mono">2534-02-36</td><td>berechnet</td></tr>
+      <tr><td class="mono">2036-10-05</td><td class="mono">2534-04-41</td><td>berechnet</td></tr>
+      <tr><td class="mono">2040-08-01</td><td class="mono">2538-01-08</td><td>berechnet</td></tr>
+      <tr><td class="mono">2046-06-09 02:13:37</td><td class="mono">2543-03-20 13:37:25</td><td>IA2/IA3 Bonus</td></tr>
+      <tr><td class="mono">2105-10-05</td><td class="mono">2597-02-40</td><td>berechnet (5071: »2597 ÄÜC«)</td></tr>
+      <tr><td class="mono">4669-02-05 00:07:01</td><td class="mono">4927-01-23 44:06:00</td><td>IA2/IA3 Bonus</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><small>Quellen: LaTeX-Quelltexte der vier Bücher (infiniteadventures.tex, infiniteadventures2.tex, infiniteadventures3.tex, 5071.tex) und der Wiki-Artikel »Infinite Adventures 3«, oldid 2746. Alle Werke CC BY-SA 4.0, Tobias Frei.</small></p>
+</div>
+
+<script>
+(function(){
+  var boxes={ia1:'f-ia1',ia2:'f-ia2',ia3:'f-ia3','5071':'f-5071',bg:'f-bg'};
+  var only=document.getElementById('f-onlytime');
+  var evs=Array.prototype.slice.call(document.querySelectorAll('#tl .ev'));
+  var count=document.getElementById('count');
+  function apply(){
+    var on={};
+    for(var k in boxes){ on[k]=document.getElementById(boxes[k]).checked; }
+    var n=0;
+    evs.forEach(function(ev){
+      var books=(ev.getAttribute('data-book')||'').split(' ');
+      var show=books.some(function(b){return on[b];});
+      if(only.checked && !/lane-(y|both|soti)/.test(ev.className)) show=false;
+      ev.classList.toggle('hidden-by-filter',!show);
+      if(show) n++;
+    });
+    count.textContent=n+' von '+evs.length+' Zeilen';
+    // Ären ausblenden, wenn darunter nichts sichtbar ist
+    document.querySelectorAll('#tl .era').forEach(function(era){
+      var el=era.nextElementSibling, any=false;
+      while(el && !el.classList.contains('era')){ if(el.classList.contains('ev') && !el.classList.contains('hidden-by-filter')) any=true; el=el.nextElementSibling; }
+      era.hidden=!any;
+    });
+    try{ localStorage.setItem('ia-tl-filter',JSON.stringify({on:on,only:only.checked})); }catch(e){}
+  }
+  try{
+    var saved=JSON.parse(localStorage.getItem('ia-tl-filter')||'null');
+    if(saved && saved.on){ for(var k in boxes){ if(k in saved.on) document.getElementById(boxes[k]).checked=!!saved.on[k]; } only.checked=!!saved.only; }
+  }catch(e){}
+  for(var k in boxes){ document.getElementById(boxes[k]).addEventListener('change',apply); }
+  only.addEventListener('change',apply);
+  apply();
+})();
+</script>
+</body>
+</html>
