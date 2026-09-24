@@ -3,7 +3,10 @@
 Umrechnung zwischen irdischer UTC-Zeit und dem ÄÜC-Kalender der Äöüzz aus den Infinite Adventures,
 in beide Richtungen, sekundengenau.
 
-* `aueconvert.html` – eigenständige HTML-Seite (keine externen Ressourcen, hell/dunkel nach Systemeinstellung)
+* `aueconvert.html` – Version 2.0, eigenständige HTML-Seite (keine externen Ressourcen, hell/dunkel nach Systemeinstellung)
+* `1.0/` – das Original »ÄÜCalendar« (2022) von Tobias Frei: HTML/CSS/JavaScript, Python 3.9 und Wolfram Language,
+  unverändert übernommen von tfrei.de/software. Hinweis: Die Rückrichtung ÄÜC → UTC der JavaScript-Fassung
+  liegt durch doppeltes Abschneiden eine Sekunde zu früh; Version 2.0 behebt das.
 
 Rechenkern: ganzzahlig (BigInt), gregorianische Schaltjahre auch vor 1582, Jahr 0 und negative Jahre.
 Die Rückrichtung ÄÜC → UTC liefert die einzige volle UTC-Sekunde im jeweiligen Örzklök-Intervall,

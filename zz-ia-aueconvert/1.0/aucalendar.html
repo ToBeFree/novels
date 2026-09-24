@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Tobias 'ToBeFree' Frei">
+<title>ÄÜCalendar</title>
+<link rel="stylesheet" href="aucalendar.css">
+<!--   ÄÜCalendar, ursprünglich erstellt für die Infinite Adventures   -->
+<!--      Hintergrund-Stil ursprünglich erstellt für tfrei.de/git      -->
+<!--      Die gesamte Datei ist gemeinfrei / public domain / CC0.      -->
+<!--                          Tobias Frei, 2022                        -->
+
+<h1>ÄÜCalendar</h1>
+
+<article id="tf-utc">
+    <h2>
+        Irdische Astronomische Zeitrechnung (UTC) → Südgalaktisches ÄÜC-Datumsformat
+    </h2>
+    <div>
+        <form id="tf-utc-form">
+            <input type="number" class="tf-utc-year" id="tf-utc-year-input" value="2022">-<input type="number" class="tf-utc-month" id="tf-utc-month-input" value="4">-<input type="number" class="tf-utc-day" id="tf-utc-day-input" value="1">, <input type="number" class="tf-utc-hour" id="tf-utc-hour-input" value="14">:<input type="number" class="tf-utc-minute" id="tf-utc-minute-input" value="4">:<input type="number" class="tf-utc-second" id="tf-utc-second-input" value="1"> UTC
+        </form>
+    </div>
+    <p>
+        <span id="tf-utc-year-inputecho">2022</span>-<span id="tf-utc-month-inputecho">4</span>-<span id="tf-utc-day-inputecho">1</span>, <span id="tf-utc-hour-inputecho">14</span>:<span id="tf-utc-minute-inputecho">4</span>:<span id="tf-utc-second-inputecho">1</span> UTC = <span id="tf-auc-year-output">2521</span>-<span id="tf-auc-month-output">3</span>-<span id="tf-auc-day-output">25</span>, <span id="tf-auc-hour-output">30</span>:<span id="tf-auc-minute-output">25</span>:<span id="tf-auc-second-output">46</span> ÄÜC
+    </p>
+    <p>
+        <span id="tf-utc-yeardecimal-inputecho">2022.2481811580417</span> UTC = <span id="tf-auc-yeardecimal-output">2521.5032741973273</span> ÄÜC
+    </p>
+</article>
+
+<article id="tf-auc">
+    <h2>
+        Südgalaktisches ÄÜC-Datumsformat → Irdische Astronomische Zeitrechnung (UTC)
+    </h2>
+    <div>
+        <form id="tf-auc-form">
+            <input type="number" class="tf-auc-year" id="tf-auc-year-input" value="2521">-<input type="number" class="tf-auc-month" id="tf-auc-month-input" value="3">-<input type="number" class="tf-auc-day" id="tf-auc-day-input" value="25">, <input type="number" class="tf-auc-hour" id="tf-auc-hour-input" value="30">:<input type="number" class="tf-auc-minute" id="tf-auc-minute-input" value="25">:<input type="number" class="tf-auc-second" id="tf-auc-second-input" value="46"> ÄÜC
+        </form>
+    </div>
+    <p>
+         <span id="tf-auc-year-inputecho">2521</span>-<span id="tf-auc-month-inputecho">3</span>-<span id="tf-auc-day-inputecho">25</span>, <span id="tf-auc-hour-inputecho">30</span>:<span id="tf-auc-minute-inputecho">25</span>:<span id="tf-auc-second-inputecho">46</span> ÄÜC = <span id="tf-utc-year-output">2022</span>-<span id="tf-utc-month-output">4</span>-<span id="tf-utc-day-output">1</span>, <span id="tf-utc-hour-output">14</span>:<span id="tf-utc-minute-output">4</span>:<span id="tf-utc-second-output">0</span> UTC
+    </p>
+    <p>
+        <span id="tf-auc-yeardecimal-inputecho">2521.5032741930604</span> ÄÜC = <span id="tf-utc-yeardecimal-output">2022.248181153344</span> UTC
+    </p>
+</article>
+
+<footer>
+    <p>
+        Es gilt das Impressum von tfrei.de:<br>
+        <a href="http://tfrei.de/impressum">tfrei.de/impressum</a>
+    </p>
+    <div class="tf-license" lang="en">
+        <p><small>This is free and unencumbered software released into the public domain.</small></p>
+        <p><small>
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+            EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+            MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+            IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+            OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+            ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+            OTHER DEALINGS IN THE SOFTWARE.
+        </small></p>
+    </div>
+</footer>
+
+<script src="aucalendar.js"></script>
