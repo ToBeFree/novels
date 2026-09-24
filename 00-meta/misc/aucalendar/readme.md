@@ -13,7 +13,7 @@ Bekannte Abweichungen: Die Rückrichtung ÄÜC → UTC der JavaScript-Fassung li
 eine Sekunde zu früh. In der täglichen Tabelle (1.460.970 Zeilen) weichen 7 Zeilen um einen Örzklök ab,
 weil die Gleitkommarechnung knapp unter einer Klök-Grenze aufrundet (z. B. 1566-01-05: exakt 38:03:11, Tabelle 38:03:12).
 
-## Version 2.0: ÄÜConvert (2025)
+## Version 2.0: ÄÜConvert (2026)
 
 * `aueconvert-2.0.html` – eigenständige HTML-Seite ohne externe Ressourcen, hell/dunkel nach Systemeinstellung
 
