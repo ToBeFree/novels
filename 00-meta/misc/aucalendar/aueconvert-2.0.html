@@ -51,6 +51,7 @@ h1 small{font-family:ui-monospace,Consolas,"DejaVu Sans Mono",monospace;font-siz
 button{font:inherit;font-size:.9rem;padding:.45rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 button:hover{border-color:var(--utc)} button:focus-visible{outline:2px solid var(--utc);outline-offset:2px}
 button.primary{background:var(--utc);color:var(--bg);border-color:var(--utc)}
+button.auc:hover{border-color:var(--auc)} button.auc:focus-visible{outline-color:var(--auc)}
 details{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:.75rem}
 summary{cursor:pointer;font-weight:600}
 table{border-collapse:collapse;width:100%;font-size:.92rem;margin-top:.6rem}
@@ -110,14 +111,15 @@ a{color:var(--utc)}
 
   <div class="toolbar" id="toolbar">
     <button class="primary" type="button" id="btn-now">Jetzt (UTC)</button>
-    <button type="button" data-utc="-752,1,1,0,0,0">Nullpunkt −752</button>
+    <button type="button" class="auc" data-auc="0,0,0,0,0,0">Nullpunkt 0 ÄÜC</button>
     <button type="button" data-utc="-47,1,1,0,0,0">Jahr −47</button>
-    <button type="button" data-utc="1430,11,14,7,8,34">1984 ÄÜC</button>
+    <button type="button" class="auc" data-auc="1984,0,0,0,0,0">1984 ÄÜC</button>
     <button type="button" data-utc="2012,7,9,14,10,1">9. Juli 2012</button>
     <button type="button" data-utc="2021,9,4,0,0,0">4. September 2021</button>
     <button type="button" data-utc="2034,5,17,19,51,11">17. Mai 2034</button>
     <button type="button" data-utc="2046,6,9,2,13,37">9. Juni 2046</button>
     <button type="button" data-utc="4669,2,5,0,7,1">5. Februar 4669</button>
+    <button type="button" class="auc" data-auc="2597,0,0,0,0,0">2597 ÄÜC</button>
   </div>
 
   <details>
@@ -249,11 +251,13 @@ a{color:var(--utc)}
     showUtc(u, sec); showAuc(a, n); busy = false;
   }
   function setUtc(vals){ vals.forEach((v,k)=>U[k].value=v); fromUtc(); }
+  function setAuc(vals){ vals.forEach((v,k)=>A[k].value=v); fromAuc(); }
 
   U.forEach(i=>i.addEventListener('input', fromUtc));
   A.forEach(i=>i.addEventListener('input', fromAuc));
   $('btn-now').addEventListener('click', ()=>{ const t = new Date(); setUtc([t.getUTCFullYear(),t.getUTCMonth()+1,t.getUTCDate(),t.getUTCHours(),t.getUTCMinutes(),t.getUTCSeconds()]); });
   document.querySelectorAll('#toolbar [data-utc]').forEach(b=>b.addEventListener('click', ()=>setUtc(b.dataset.utc.split(',').map(Number))));
+  document.querySelectorAll('#toolbar [data-auc]').forEach(b=>b.addEventListener('click', ()=>setAuc(b.dataset.auc.split(',').map(Number))));
   fromUtc();
 })();
 </script>
