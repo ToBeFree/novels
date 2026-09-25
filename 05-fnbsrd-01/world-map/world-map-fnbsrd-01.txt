@@ -80,4 +80,6 @@ HINWEISE ZUR KARTE
   * Arae ist nur »weit entfernt«; die Richtung ist frei gewählt.
   * Pavonis ist im Zustand nach Band 1 eingezeichnet (Weltstein-Krater). Zu Beginn: ein Blaudorf mit
     Betonmauern am Meer, Westtor, sternförmigen Wegen und sieben Springbrunnen.
+  * Die Karte wurde auf Basis der von Tobias Frei geschriebenen Romane durch die KI Claude Fable 5.1 erstellt
+    und ist gemeinfrei (CC0 / Public Domain).
 

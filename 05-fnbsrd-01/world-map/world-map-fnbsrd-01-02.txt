@@ -85,4 +85,6 @@ HINWEISE ZUR KARTE
   * Luyten liegt »weit im Westen, jenseits der Kartengrenze des vorherigen Abenteuers« im Urwald der
     Elfenberge; die genaue Lage ist frei gewählt. Auf welcher Seite des Weges Ross liegt, ebenfalls.
   * Elfendorf, Waldsee und Wolfsspur stammen aus dem angefangenen Text bzw. den Notizen zu Band 2.
+  * Die Karte wurde auf Basis der von Tobias Frei geschriebenen Romane durch die KI Claude Fable 5.1 erstellt
+    und ist gemeinfrei (CC0 / Public Domain).
 

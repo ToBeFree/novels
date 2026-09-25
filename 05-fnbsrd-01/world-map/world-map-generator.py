@@ -7,6 +7,9 @@
 
 Die Karten werden auf einer Zeichenfläche zusammengesetzt; Orte lassen sich
 durch Ändern der Koordinaten in draw_band1() und draw_band2() verschieben.
+
+Dieses Skript wurde auf Basis der von Tobias Frei geschriebenen Romane
+durch die KI Claude Fable 5.1 erstellt und ist gemeinfrei (CC0 / Public Domain).
 """
 import sys
 
