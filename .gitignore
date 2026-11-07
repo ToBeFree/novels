@@ -1,0 +1,7 @@
+*.aux
+*.out
+*.kate-swp
+*.log
+*.odg#
+*.ods#
+*.fods#

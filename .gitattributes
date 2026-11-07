@@ -1,0 +1,5 @@
+# Do not perform CRLF <-> LF conversions on any files
+* -text
+
+# This does *not* break git's diff handling in the way "binary" would:
+# "binary" means "-text -diff"; "-diff" is undesirable.

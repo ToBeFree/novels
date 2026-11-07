@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="deu">
+	<head>
+		<meta content="cb867af3-7771-473d-9ab6-aa7807ab3c65" name="dtb:uid"/>
+		<meta content="2" name="dtb:depth"/>
+		<meta content="0" name="dtb:totalPageCount"/>
+		<meta content="0" name="dtb:maxPageNumber"/>
+	</head>
+	<docTitle>
+		<text>Fnbsrd</text>
+	</docTitle>
+	<navMap>
+		<navPoint class="chapter" id="nav01" playOrder="1">
+			<navLabel>
+				<text>Impressum</text>
+			</navLabel>
+			<content src="fnbsrd.xhtml#impressum"/>
+		</navPoint>
+		<navPoint class="chapter" id="nav02" playOrder="2">
+			<navLabel>
+				<text>Exodus</text>
+			</navLabel>
+			<content src="fnbsrd.xhtml#exodus"/>
+			<navPoint class="chapter" id="nav03" playOrder="3">
+				<navLabel>
+					<text>No Sympathy</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#no-sympathy"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav04" playOrder="4">
+				<navLabel>
+					<text>First Page of the Second Chapter</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#first-page-of-the-second-chapter"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav05" playOrder="5">
+				<navLabel>
+					<text>To Hell and Back</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#to-hell-and-back"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav06" playOrder="6">
+				<navLabel>
+					<text>The Start of Something New</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#the-start-of-something-new"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav07" playOrder="7">
+				<navLabel>
+					<text>Right Here, Right Now</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#right-here-right-now"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav08" playOrder="8">
+				<navLabel>
+					<text>Superstition</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#superstition"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav09" playOrder="9">
+				<navLabel>
+					<text>Clear the Air</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#clear-the-air"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="nav10" playOrder="10">
+			<navLabel>
+				<text>Leviticus</text>
+			</navLabel>
+			<content src="fnbsrd.xhtml#leviticus"/>
+			<navPoint class="chapter" id="nav11" playOrder="11">
+				<navLabel>
+					<text>Free Me</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#free-me"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav12" playOrder="12">
+				<navLabel>
+					<text>Hotel California</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#hotel-california"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav13" playOrder="13">
+				<navLabel>
+					<text>No More Games</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#no-more-games"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav14" playOrder="14">
+				<navLabel>
+					<text>You Walk Away</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#you-walk-away"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav15" playOrder="15">
+				<navLabel>
+					<text>Tourner Dans Le Vide</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#tourner-dans-le-vide"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav16" playOrder="16">
+				<navLabel>
+					<text>Ausritt ins Verderben</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#ausritt-ins-verderben"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav17" playOrder="17">
+				<navLabel>
+					<text>Skyfall</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#skyfall"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav18" playOrder="18">
+				<navLabel>
+					<text>Don’t Say a Word</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#dont-say-a-word"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav19" playOrder="19">
+				<navLabel>
+					<text>Beneath a Blackened Sky</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#beneath-a-blackened-sky"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav20" playOrder="20">
+				<navLabel>
+					<text>Signs of Life</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#signs-of-life"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="chapter" id="nav21" playOrder="21">
+			<navLabel>
+				<text>Bonusmaterial</text>
+			</navLabel>
+			<content src="fnbsrd.xhtml#bonusmaterial"/>
+			<navPoint class="chapter" id="nav22" playOrder="22">
+				<navLabel>
+					<text>Postskriptum</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#postskriptum"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav23" playOrder="23">
+				<navLabel>
+					<text>Titelmelodie</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#titelmelodie"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav24" playOrder="24">
+				<navLabel>
+					<text>Musikliste</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#musikliste"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav25" playOrder="25">
+				<navLabel>
+					<text>Bildquellen</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#bildquellen"/>
+			</navPoint>
+			<navPoint class="chapter" id="nav26" playOrder="26">
+				<navLabel>
+					<text>Lizenz des Buchinhalts</text>
+				</navLabel>
+				<content src="fnbsrd.xhtml#lizenz-des-buchinhalts"/>
+			</navPoint>
+		</navPoint>
+	</navMap>
+</ncx>

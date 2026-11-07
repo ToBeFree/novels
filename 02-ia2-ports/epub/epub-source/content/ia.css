@@ -1,0 +1,34 @@
+body {
+    font-family: serif;
+    hyphens: auto;
+}
+dt {
+    font-weight: bold;
+}
+.figure {
+    text-align: center;
+    border: none;
+}
+.figure img {
+    max-width:  75vw;
+    max-height: 75vh;
+    display: block; /* "img" ist eigentlich ein Inline-Block-Element. Dieses koennte dann nicht zentriert werden. */
+    margin: auto; /* zentriert das Bild. Funktioniert dank "display: block;" */
+}
+.ia-emph, i, em, var {
+    font-family: serif;
+    font-style: italic;
+}
+.ia-bold, b, strong {
+    font-family: serif;
+    font-weight: bold;
+}
+.ia-heading, h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+}
+.ia-console, samp, code, kbd, pre {
+    font-family: monospace;
+}
+p[role=separator] {
+    text-align: center;
+}

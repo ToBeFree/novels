@@ -1,0 +1,24 @@
+Infinite Adventures 3
+Tobias Frei, infiniteadventures.de
+
+The novel, its (Lua)LaTex source code
+and its HTML and EPUB adaptions
+
+(infiniteadventures3.pdf, infiniteadventures3.tex,
+index.html, ia3.epub)
+
+are licensed under a
+Creative Commons Attribution-ShareAlike 4.0 International License.
+
+Required attribution:
+Tobias Frei, infiniteadventures.de
+
+You should have received a copy of the license along with the work.
+
+You are required to actually read and understand the full text
+of the license, not just a "human-readable summary".
+
+The images used in the book are in the public domain.
+Details and attribution can be found
+both in the book and the source code,
+in the "Bildquellen" chapter.

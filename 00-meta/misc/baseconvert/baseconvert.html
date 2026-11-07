@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Tobias 'ToBeFree' Frei">
+<title>Base Converter</title>
+<link rel="stylesheet" href="baseconvert.css">
+<!-- Base Converter, ursprünglich erstellt für die Infinite Adventures -->
+<!--      Hintergrund-Stil ursprünglich erstellt für tfrei.de/git      -->
+<!--      Die gesamte Datei ist gemeinfrei / public domain / CC0.      -->
+<!--                          Tobias Frei, 2020                        -->
+
+<h1>Base Converter</h1>
+
+<article id="tf-basex">
+    <h2>
+        Base 10 → Base
+        <form class="tf-base">
+            <input type="number" class="b" id="base1" value="7" min="2" max="36">
+        </form>
+    </h2>
+    <div>
+        <form class="tf-number">
+            <input type="number" class="n" id="value1" value="42">
+        </form>
+        <sub>10</sub>
+    </div>
+    <p>
+        <span id="display1value">42</span><sub>10</sub>
+        =
+        <span id="result1">60</span><sub id="display1base">7</sub>
+    </p>
+</article>
+
+<article id="tf-base10">
+    <h2>
+        Base
+        <form class="tf-base">
+            <input type="number" class="b" id="base2" value="7" min="2" max="36">
+        </form>
+        → Base 10
+    </h2>
+    <div>
+        <form class="tf-number">
+            <input type="text" class="n" id="value2" value="42">
+        </form>
+    </div>
+    <p>
+        <span id="display2value">42</span><sub id="display2base">7</sub>
+        =
+        <span id="result2">30</span><sub>10</sub>
+    </p>
+</article>
+
+<footer>
+    <p>
+        Es gilt das Impressum von tfrei.de:<br>
+        <a href="http://tfrei.de/impressum">tfrei.de/impressum</a>
+    </p>
+    <div class="tf-license" lang="en">
+        <p><small>This is free and unencumbered software released into the public domain.</small></p>
+        <p><small>
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+            EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+            MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+            IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+            OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+            ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+            OTHER DEALINGS IN THE SOFTWARE.
+        </small></p>
+    </div>
+</footer>
+
+<script src="baseconvert.js"></script>

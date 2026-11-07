@@ -1,0 +1,28 @@
+\selectlanguage *[spelling=new, babelshorthands=false]{german}
+\contentsline {part}{\numberline {I}Exodus}{9}{part.1}%
+\contentsline {chapter}{\numberline {1}No Sympathy}{11}{chapter.1}%
+\contentsline {chapter}{\numberline {2}First Page of the Second Chapter}{17}{chapter.2}%
+\contentsline {chapter}{\numberline {3}To Hell and Back}{21}{chapter.3}%
+\contentsline {chapter}{\numberline {4}The Start of Something New}{31}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Right Here, Right Now}{37}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Superstition}{41}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Clear the Air}{47}{chapter.7}%
+\newpage 
+\contentsline {part}{\numberline {II}Leviticus}{53}{part.2}%
+\contentsline {chapter}{\numberline {8}Free Me}{55}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Hotel California}{57}{chapter.9}%
+\contentsline {chapter}{\numberline {10}No More Games}{59}{chapter.10}%
+\contentsline {chapter}{\numberline {11}You Walk Away}{65}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Tourner Dans Le Vide}{75}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Ausritt ins Verderben}{83}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Skyfall}{91}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Don’t Say a Word}{99}{chapter.15}%
+\contentsline {chapter}{\numberline {16}Beneath a Blackened Sky}{103}{chapter.16}%
+\contentsline {chapter}{\numberline {17}Signs of Life}{109}{chapter.17}%
+\contentsline {part}{\numberline {III}Bonusmaterial}{113}{part.3}%
+\contentsline {chapter}{\numberline {18}Postskriptum}{115}{chapter.18}%
+\contentsline {chapter}{\numberline {19}Titelmelodie}{117}{chapter.19}%
+\contentsline {chapter}{\numberline {20}Musikliste}{119}{chapter.20}%
+\contentsline {chapter}{\numberline {21}Bildquellen}{127}{chapter.21}%
+\contentsline {chapter}{\numberline {22}Lizenz des Buchinhalts}{129}{chapter.22}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

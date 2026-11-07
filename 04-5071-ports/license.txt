@@ -1,0 +1,24 @@
+5071
+Tobias Frei, 5071.de
+
+The novel, its (Lua)LaTex source code
+and its HTML and EPUB adaptions
+
+(5071.pdf, 5071.tex,
+index.html, 5071.epub)
+
+are licensed under a
+Creative Commons Attribution-ShareAlike 4.0 International License.
+
+Required attribution:
+Tobias Frei, 5071.de
+
+You should have received a copy of the license along with the work.
+
+You are required to actually read and understand the full text
+of the license, not just a "human-readable summary".
+
+The images used in the book are in the public domain.
+Details and attribution can be found
+both in the book and the source code,
+in the "Bildquellen" chapter.

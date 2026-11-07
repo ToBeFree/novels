@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'ia-linux-libertine-regular';
+    src: url('./fonts/libertine/linlibertine-r.otf');
+}
+@font-face {
+    font-family: 'ia-linux-libertine-italic';
+    src: url('./fonts/libertine/linlibertine-ri.otf');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ia-linux-libertine-bold';
+    src: url('./fonts/libertine/linlibertine-rb.otf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'ia-linux-libertine-bold-italic';
+    src: url('./fonts/libertine/linlibertine-rbi.otf');
+    font-style: italic;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'ia-linux-biolinum';
+    src: url('./fonts/libertine/linbiolinum-r.otf');
+}
+@font-face {
+    font-family: 'ia-linux-biolinum-italic';
+    src: url('./fonts/libertine/linbiolinum-ri.otf');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ia-linux-biolinum-bold';
+    src: url('./fonts/libertine/linbiolinum-rb.otf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'ia-linux-libertine-mono';
+    src: url('./fonts/libertine/linlibertine-m.otf');
+}
+body {
+    font-family: "xLinux Libertine", "ia-linux-libertine-regular", serif;
+    hyphens: auto;
+}
+dt {
+    font-weight: bold;
+}
+figure {
+    text-align: center;
+    border: none;
+}
+figure img {
+    max-width:  75vw;
+    max-height: 75vh;
+    display: block; /* "img" ist eigentlich ein Inline-Block-Element. Dieses könnte dann nicht zentriert werden. */
+    margin: auto; /* zentriert das Bild. Funktioniert dank "display: block;" */
+}
+.ia-emph, i, em, var {
+    font-family: "xLinux Libertine", "ia-linux-libertine-italic", serif;
+    font-style: italic;
+}
+.ia-bold, b, strong {
+    font-family: "xLinux Libertine", "ialinux-libertine-bold", serif;
+    font-weight: bold;
+}
+.ia-heading, h1, h2, h3, h4, h5, h6 {
+    font-family: "xLinux Biolinum", "ia-linux-biolinum-bold", sans-serif;
+}
+.ia-console, samp, code, kbd, pre {
+    font-family: "xLinux Libertine Mono", "ia-linux-libertine-mono", monospace;
+}
+.ia-nobullets ul {
+    list-style: none;
+}
+p[role=separator] {
+    text-align: center;
+}

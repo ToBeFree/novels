@@ -1,0 +1,65 @@
+/* Base Converter, urspruenglich erstellt fuer die Infinite Adventures *
+ * Hintergrund-Stil urspruenglich erstellt fuer tfrei.de/git           *
+ * Die gesamte Datei ist gemeinfrei / public domain / CC0.             *
+ * Tobias Frei, 2019                                                   */
+
+article, footer {
+    border-top: 0.2rem solid black;
+}
+body {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.5);
+    margin: auto;
+    max-width: 60rem;
+}
+html {
+    background:
+        /* Berge im Vordergrund */
+        linear-gradient( 45deg, rgba( 16,  13,  10, 1.00)0%, rgba( 32,  27,  19, 1.00)  10%, rgba(255, 255, 255, 0.00)  10.1%),
+        linear-gradient(-45deg, rgba( 14,  37,  14, 1.00)0%, rgba(  0, 102,   0, 1.00)  10%, rgba(255, 255, 255, 0.00)  10.1%),
+
+        /* Wasser */
+        linear-gradient(  0deg, rgba(  0,   0,  60, 1.00)0%, rgba(  0,   0, 200, 1.00)  10%, rgba(255, 255, 255, 0.00)  11.0%),
+
+        /* Berge im Hintergrund */
+        linear-gradient( 20deg, hsla( 30, 23%,  5%, 1.00)0%, hsla( 37, 25%, 10%, 1.00)  15%, rgba(255, 255, 255, 0.00)  15.1%),
+        linear-gradient(-10deg, hsla(120, 40%, 20%, 1.00)0%, hsla(120, 40%, 20%, 1.00)  20%, rgba(255, 255, 255, 0.00)  20.1%),
+        linear-gradient( 20deg, hsla( 33,  1%, 10%, 1.00)0%, hsla( 33,  1%, 10%, 1.00)  20%, rgba(255, 255, 255, 0.00)  20.1%),
+        linear-gradient( 12deg, hsla( 33,  1%, 20%, 1.00)0%, hsla( 33,  1%, 20%, 1.00)  20%, rgba(255, 255, 255, 0.00)  20.1%),
+        linear-gradient( 15deg, hsla( 33, 14%, 20%, 1.00)0%, hsla( 33, 14%, 25%, 1.00)  25%, rgba(255, 255, 255, 0.00)  25.1%),
+
+        /* weißer Verlauf von oben */
+        linear-gradient(180deg, rgba(255, 255, 255, 1.00)0%, rgba(255, 255, 255, 1.00)  10%, rgba(255, 255, 255, 0.00) 100.0%),
+
+        /* Berge, die hinter dem Nebel verschwinden */
+        linear-gradient(-40deg, hsla( 33, 14%,  5%, 1.00)0%, hsla( 33, 14%,  7%, 1.00)  25%, rgba(255, 255, 255, 0.00)  25.1%),
+        linear-gradient(-15deg, hsla( 33, 14%, 20%, 1.00)0%, hsla( 33, 14%, 25%, 1.00)  25%, rgba(255, 255, 255, 0.00)  25.1%),
+        linear-gradient( -3deg, hsla( 33,  3%, 35%, 1.00)0%, hsla( 33,  3%, 35%, 1.00)  25%, rgba(255, 255, 255, 0.00)  25.2%),
+        linear-gradient(-50deg, hsla( 33,  3%, 75%, 1.00)0%, hsla( 33,  3%, 75%, 1.00)  40%, rgba(255, 255, 255, 0.00)  40.2%),
+        linear-gradient( 50deg, hsla( 33,  3%, 85%, 1.00)0%, hsla( 33,  3%, 85%, 1.00)  60%, rgba(255, 255, 255, 0.00)  60.2%);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgba(0, 0, 0, 1);
+    /* text-align: center; */
+}
+.container {
+    background:     rgba(255, 255, 255, 0.5);
+    box-shadow:     0 0 20px rgba(255, 255, 255, 0.5);
+    margin-top:     0;
+    margin-bottom:  0;
+}
+form {
+    display: inline;
+}
+h1 {
+    text-shadow:    1px 1px 0 rgba(255, 255, 255, 0.1), 3px 3px 5px rgba(0, 0, 42, 0.5);
+    margin-top:     0.5em;
+    margin-bottom:  0.5em;
+}
+input.b {
+    width:          4em;
+}
+input.n {
+    width:         20em;
+}

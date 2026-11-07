@@ -1,0 +1,18 @@
+Pixelfaktor: Pixel pro 1000 Lichtjahre:,637,,,,,,,
+L = galaktische Länge (Longitude),Rechtssystem,Rechtssystem,Rechtssystem,,,,,
+B = galaktische Breite (Latitude),Nördlichkeit (Söl -> Zentrum),Höhe über Ebene (Söl -> Ziskö),Östlichkeit (Söl -> Carina),Distanz von Söl,Draufsicht: Gradzahl von der x-Achse gegen den Uhrzeigersinn,Gradzahl nach oben von der Ebene weg,,
+Formel,x = D*cos(L),y = D*sin(B),z = D*(-1)*sin(L),,,,BildX = z*(Pixelfaktor/1000),BildY = (-1)*x*(Pixelfaktor/1000)
+Sol-zentrierte Kartenposition von,x (Nördlichkeit) [ly],y (Höhe) [ly],z (Östlichkeit) [ly],Distanz D [ly],Galaktische Länge L,Galaktische Breite B,Bildposition x (Pixel nach rechts),Bildposition y (Pixel nach unten)
+Söl,0,0,0,0,0,0,0,0
+Maia,-349.564,-143.633,-86.0511,360,166.170657,-23.514517,-54.8145507,222.672268
+Elektra,-388.421,-161.729,-95.5464,400,166.18038,-23.848669,-60.8630568,247.424177
+Helixnebel (SOTIs Planet),524.783,-545.866,-383.54,650,36.161326,-57.11837,-244.31498,-334.286771
+Zöl,4126.78,-55.3037,1725.31,4472.916,337.31138,-0.70843,1099.02247,-2628.75886
+NGC 6334 OI-T c3-3 (Katzenpfote),5464.59,52.375,838.699,5528.5804,351.274398,0.5427996,534.251263,-3480.94383
+HD 93129 A (Trumpler 14),2242.52,-75.0594,7151.65,7495,287.409648,-0.573804,4555.60105,-1428.48524
+Eta Carinae A (Carinanebel),2268.88,-82.4561,7153.82,7505,287.596781,-0.629511,4556.98334,-1445.27656
+,,,,,,,,
+Dönkwön (Ameisenwesen),nahe Zöl (+- 400),nahe Zöl (+- 100),nahe Zöl (+- 400),,,,,
+Nögnög (Raumstation),nahe Zöl (+- 400),nahe Zöl (+- 100),nahe Zöl (+- 400),,,,,
+Cäribbeän (Gnörk-Kartell),nahe Zöl (+- 100),nahe Zöl (+- 100),nahe Zöl (+ 600),,,,,
+Ziskö (Warpfunk-Leuchtturm),nahe Zöl (+- 50),350,nahe Zöl (+- 50),,,,,
